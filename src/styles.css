@@ -172,12 +172,21 @@ a:link {
     50% { border-color: gray }
   }
 
-.mainImagesDiv {
+.mainImageDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+
+.experienceImageDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.experienceImage {
+    height: 30vh;
 }
 
 .iconsDiv {
@@ -198,6 +207,7 @@ a:link {
   justify-content: center;
   padding: .30rem 1.65rem;
   margin-left: 60vw;
+  margin-bottom: 5vh;
   position: relative;
   text-align: center;
   text-decoration: none #000000 solid;
@@ -605,7 +615,7 @@ p {
 /* MAIN IMAGE */
 
 .mainImage {
-    width: 25vw;
+    width: 20vw;
     display: flex;
     margin: 0 auto;
 }
@@ -616,7 +626,12 @@ p {
     font-size: 1.2vh;
     height: 4vh;
     padding-bottom: 4vh;
-    margin-top: 3vh;
+    margin-top: 5vh;
+}
+
+.experienceImage {
+    height: 35vh;
+    width: auto;
 }
 
 /* SKILLs */
@@ -630,6 +645,10 @@ p {
     padding-bottom: 2vh;
     border-radius: 2vh;
     width: 70vw;
+}
+
+.experienceSkillsDiv {
+    margin-top: 5vh;
 }
 
 .skillsDiv p {
@@ -697,6 +716,7 @@ p {
     margin-left: 0;
 }
 
+
 /* PROJECTS *//* PROJECTS *//* PROJECTS */
 /* MAIN SECTION */
 
@@ -734,7 +754,7 @@ p {
 }
 
 .projectsDiv img {
-    height: 15vh;
+    height: 17vh;
     width: fit-content;
     margin-top: 0;
     margin-bottom: 0;
@@ -748,10 +768,8 @@ p {
     font-weight:normal;
     margin-top: 0;
     margin-bottom: 0;
-    margin-top: 2vh;
+    margin-top: 1vh;
 } 
-
-
 /* FOOTER */
 
 .footer {
@@ -770,9 +788,6 @@ p {
 
 
 @media only screen and (max-width: 767px) {
-.educationSklsP {
-    background-color: white;
-}
 
 .typingText {
     padding-left: 20vw;
