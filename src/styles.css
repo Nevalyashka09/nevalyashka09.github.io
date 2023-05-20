@@ -97,9 +97,10 @@ a:link {
 }
 
 .overlay img {
-    height: 15vh;
+    height: 10vh;
     width: auto;
     margin-top: -2vh;
+    margin-bottom: 5vh;
 }
 
 .popup {
@@ -185,8 +186,13 @@ a:link {
     justify-content: center;
 }
 
+.educationImage {
+    height: 50vh;
+}
+
 .experienceImage {
-    height: 30vh;
+    height: 65vh;
+    padding-right: 20vw;
 }
 
 .iconsDiv {
@@ -249,9 +255,10 @@ a:link {
 }
 
 .mainImage {
-    width: 90vw;
+    width: 60vw;
     display: block;
     margin: 0 auto;
+    padding-right: 5vw;
 }
 
 /* SKILLs */
@@ -615,9 +622,10 @@ p {
 /* MAIN IMAGE */
 
 .mainImage {
-    width: 20vw;
+    width: 15vw;
     display: flex;
     margin: 0 auto;
+    padding-right: 0;
 }
 
 .downloadButton {
@@ -629,9 +637,19 @@ p {
     margin-top: 5vh;
 }
 
-.experienceImage {
-    height: 35vh;
+.educationImage {
+    height: 45vh;
     width: auto;
+    margin-bottom: 0;
+}
+
+.experienceImage {
+    height: 55vh;
+    width: auto;
+    bottom: 35vh;
+    padding-right: 10vw;
+
+    position: absolute;
 }
 
 /* SKILLs */
