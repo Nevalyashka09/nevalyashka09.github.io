@@ -173,32 +173,43 @@ a:link {
     50% { border-color: gray }
   }
 
-.mainImageDiv {
+.mainImagesDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
 }
 
-.experienceImageDiv {
+.mainImageDiv {
     display: flex;
     justify-content: center;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+
+.mainImage {
+    width: 60vw;
 }
 
 .educationImage {
-    height: 50vh;
+    height: 35vh;
 }
 
 .experienceImage {
-    height: 65vh;
-    padding-right: 20vw;
+    height: 30vh;
 }
 
 .iconsDiv {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+
+.iconImage {
+    height: 5vh;
+    width: auto;
+    margin-left: 3vw;
+    margin-bottom: 2vh;
 }
 
 .downloadButton {
@@ -245,20 +256,6 @@ a:link {
 .downloadButton:hover:after {
   bottom: 2px;
   left: 2px;
-}
-
-.iconImage {
-    height: 5vh;
-    width: auto;
-    margin-left: 3vw;
-    margin-bottom: 2vh;
-}
-
-.mainImage {
-    width: 60vw;
-    display: block;
-    margin: 0 auto;
-    padding-right: 5vw;
 }
 
 /* SKILLs */
@@ -361,13 +358,6 @@ a:link {
 .projectsDiv p {
     margin-top: 0;
 }
-
-.projectButton {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 0;
-    font-size: 2.5vw;
-} 
 
 
 /* FOOTER */
@@ -622,10 +612,18 @@ p {
 /* MAIN IMAGE */
 
 .mainImage {
-    width: 15vw;
-    display: flex;
-    margin: 0 auto;
-    padding-right: 0;
+    height: 25vh;
+    width: auto;
+}
+
+.educationImage {
+    height: 30vh;
+    width: auto;
+}
+
+.experienceImage {
+    height: 35vh;
+    width: auto;
 }
 
 .downloadButton {
@@ -635,21 +633,6 @@ p {
     height: 4vh;
     padding-bottom: 4vh;
     margin-top: 5vh;
-}
-
-.educationImage {
-    height: 45vh;
-    width: auto;
-    margin-bottom: 0;
-}
-
-.experienceImage {
-    height: 55vh;
-    width: auto;
-    bottom: 35vh;
-    padding-right: 10vw;
-
-    position: absolute;
 }
 
 /* SKILLs */
@@ -772,11 +755,10 @@ p {
 }
 
 .projectsDiv img {
-    height: 17vh;
-    width: fit-content;
+    height: 15vh;
+    width: auto;
     margin-top: 0;
     margin-bottom: 0;
-    margin-top: -2vh;
 }
 
 .projectButton {
