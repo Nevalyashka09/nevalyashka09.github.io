@@ -355,7 +355,7 @@ a:link {
 
 .projectsDiv img {
     height: 20vh;
-    width: fit-content;
+    width: auto;
 }
 
 .projectsDiv p {
