@@ -258,6 +258,11 @@ a:link {
   left: 2px;
 }
 
+.projectsButton {
+    margin-top: 2vh;
+    margin-left: 0;
+}
+
 /* SKILLs */
 
 .skillsDiv {
@@ -633,6 +638,11 @@ p {
     height: 4vh;
     padding-bottom: 4vh;
     margin-top: 5vh;
+}
+
+.projectsButton {
+    margin-top: 2vh;
+    margin-left: 0;
 }
 
 /* SKILLs */
