@@ -1,9 +1,47 @@
 @import "../styles/variables";
 
-.homePage {
-  background-color: $color-yellow;
-  padding: 20px;
+// First section - Intro
+.intro-section {
+  background-color: $light-blue;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.cursive {
-  font-family: "homemadeApple", sans-serif;
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-background,
+.profile-photo {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+}
+
+.paint-background {
+  z-index: 1;
+}
+
+.profile-photo {
+  z-index: 2;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// SECOND SECTION
+.myhelp {
+  background-color: $yellow;
+  height: 20rem;
+}
+// THIRD SECTION
+.background {
+  background-color: $white;
+  height: 20rem;
 }

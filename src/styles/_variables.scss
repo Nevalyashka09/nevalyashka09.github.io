@@ -1,7 +1,12 @@
-$color-pink: #ffc0cb;
-$color-lightblue: #add8e6;
-$color-yellow: #ffffe0;
-$color-lightgreen: #90ee90;
+// Website colors
+$white: #ffffff;
+$dark-green: #1b5536;
+$light-blue: #effff9;
+$yellow: #fae843;
+
+// Website fonts
+$istokWeb-font: "istokWeb";
+$homemadeApple-font: "homemadeApple";
 
 @font-face {
   font-family: "istokWeb";
@@ -21,4 +26,21 @@ $color-lightgreen: #90ee90;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1 {
+  color: $dark-green;
+  font-family: $istokWeb-font;
+  font-size: 2.5rem;
+}
+
+.p-istok {
+  font-family: $istokWeb-font;
+  font-size: 1.2rem;
+}
+
+.p-cursive {
+  color: $dark-green;
+  font-family: $homemadeApple-font;
+  font-size: 1.5rem;
 }

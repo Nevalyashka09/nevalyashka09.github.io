@@ -11,7 +11,7 @@ const Footer = () => {
     },
     footerText: {
       fontFamily: "istokWeb",
-      fontSize: "1.1rem",
+      fontSize: "1.2rem",
     },
   };
 

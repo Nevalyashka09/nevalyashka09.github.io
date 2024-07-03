@@ -27,7 +27,7 @@ const Header = () => {
       textDecoration: "none",
       color: "#333",
       fontFamily: "istokWeb",
-      fontSize: "1.1rem",
+      fontSize: "1.2rem",
     },
     activeLink: {
       color: "#1B5536",
