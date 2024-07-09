@@ -16,6 +16,7 @@ const Header = () => {
       fontFamily: "homemadeApple",
       fontSize: "1.5rem",
       alignSelf: "center",
+      textShadow: "2px 2px 3px rgba(0, 0, 0, 0.1)",
     },
     navLinks: {
       display: "flex",

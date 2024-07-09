@@ -2,12 +2,15 @@ import React from "react";
 import "../styles/homePage.scss";
 import profilePhoto from "../images/profilePhoto.png";
 import paintBackground from "../images/paintBackground.png";
+import Button from "../portfolioComponents/Button";
+import SideButton from "../portfolioComponents/SideButton";
 
 const HomePage = () => {
   return (
     <section>
       <section className="intro-section">
-        <div className="photo-wrapper">
+        <SideButton />
+        <div className="photo-container">
           <img
             src={paintBackground}
             alt="Paint Background"
@@ -21,13 +24,15 @@ const HomePage = () => {
               margin: "5rem 0 0 0",
               display: "flex",
               flexDirection: "column",
-              gap: "1rem",
+              gap: "1.5rem",
             }}
           >
-            <h1>Hey There,</h1>
-            <h1>I'm Olesia</h1>
+            <div>
+              <h1>Hey There,</h1>
+              <h1>I'm Olesia</h1>
+            </div>
             <p className="p-istok">FRONT END WEB DEVELOPER</p>
-            <button>DownloadCV</button>
+            <Button />
           </div>
           <div style={{ margin: "5rem 0 0 15rem" }}>
             <p className="p-cursive">Based in Bordeaux, France</p>
