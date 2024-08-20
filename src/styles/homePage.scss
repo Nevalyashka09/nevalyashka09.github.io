@@ -35,13 +35,36 @@
   margin-left: 5rem;
 }
 
-// SECOND SECTION
-.myhelp {
+// Second section - My help
+.my-help {
   background-color: $yellow;
   height: 20rem;
   z-index: 5;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+
+.help-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rem 0 5rem;
+  gap: 1rem;
+}
+
+.techno-card {
+  height: 4rem;
+  width: 4rem;
+  background-color: white;
+}
+
+.texhno-card-image {
+  height: 2rem;
+  width: 2rem;
+}
+
 // THIRD SECTION
 .background {
   background-color: $white;
