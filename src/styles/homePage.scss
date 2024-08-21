@@ -54,19 +54,70 @@
   gap: 1rem;
 }
 
-.techno-card {
-  height: 4rem;
-  width: 4rem;
-  background-color: white;
+.techno-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.texhno-card-image {
-  height: 2rem;
-  width: 2rem;
+.techno-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.techno-card {
+  height: 5rem;
+  width: 5rem;
+  background-color: $white;
+  border-radius: 10%;
+  border: 1px solid;
+  border-color: $dark-green;
+  box-shadow: "2px 2px 5px rgba(0, 0, 0, 0.3)";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.techno-card-image {
+  height: 3rem;
+  width: 3rem;
+  margin: 1.2rem 0 0 0;
 }
 
 // THIRD SECTION
 .background {
   background-color: $white;
-  height: 20rem;
+  height: 40rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0 0 0;
+}
+
+.education {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 3px dotted;
+  border-color: $orange;
+  flex-direction: column;
+  height: 40rem;
+}
+
+.experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40rem;
+}
+
+.timeline {
+  flex: 1;
+  background-color: rgb(245, 242, 238);
+  width: 100%;
+  margin: 0.1rem 0; /* Add some spacing between each timeline */
 }

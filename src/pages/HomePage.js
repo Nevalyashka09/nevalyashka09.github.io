@@ -2,9 +2,41 @@ import React from "react";
 import "../styles/homePage.scss";
 import profilePhoto from "../images/profilePhoto.png";
 import uiux from "../images/uiux.png";
+import html from "../images/html.png";
+import css from "../images/css.png";
+import js from "../images/js.png";
+import ts from "../images/ts.png";
+import react from "../images/react.png";
+import wordpress from "../images/wordpress.png";
 import paintBackground from "../images/paintBackground.png";
 import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
+
+const cards = [
+  { name: "UI/UX", src: uiux },
+  { name: "HTML", src: html },
+  { name: "CSS", src: css },
+  { name: "JS", src: js },
+  { name: "TS", src: ts },
+  { name: "React", src: react },
+  { name: "WP", src: wordpress },
+];
+
+const TechCard = ({ name, src }) => (
+  <div className="techno-card">
+    <img src={src} alt={name} className="techno-card-image" />
+    <p
+      className="p-istok"
+      style={{
+        fontSize: "0.6rem",
+        margin: "0.2rem 1rem 1rem 0",
+        alignSelf: "flex-end",
+      }}
+    >
+      {name}
+    </p>
+  </div>
+);
 
 const HomePage = () => {
   return (
@@ -50,16 +82,46 @@ const HomePage = () => {
           </p>
         </div>
         <div className="techno-cards">
-          <div className="techno-card">
-            <img src={uiux} alt="UI/UX" className="texhno-card-image"></img>
-            <p className="p-istok" style={{ fontSize: "0.8rem" }}>
-              UI/UX
-            </p>
+          <div className="techno-cards-row">
+            {cards.slice(0, 3).map((card) => (
+              <TechCard key={card.name} name={card.name} src={card.src} />
+            ))}
+          </div>
+          <div className="techno-cards-row">
+            {cards.slice(3).map((card) => (
+              <TechCard key={card.name} name={card.name} src={card.src} />
+            ))}
           </div>
         </div>
       </section>
       <section className="background">
-        <p>My Background</p>
+        <div className="education">
+          <div
+            class="timeline"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1>My Background</h1>
+          </div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+        </div>
+        <div className="experience">
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+          <div class="timeline"></div>
+        </div>
       </section>
     </section>
   );
