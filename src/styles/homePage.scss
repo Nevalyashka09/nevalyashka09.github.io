@@ -91,10 +91,9 @@
 // THIRD SECTION
 .background {
   background-color: $white;
-  height: 40rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 2rem 0;
 }
 
 .education {
@@ -117,7 +116,14 @@
 
 .timeline {
   flex: 1;
-  background-color: rgb(245, 242, 238);
   width: 100%;
-  margin: 0.1rem 0; /* Add some spacing between each timeline */
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  height: 3rem;
+  width: 3rem;
 }

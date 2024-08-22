@@ -9,6 +9,8 @@ import ts from "../images/ts.png";
 import react from "../images/react.png";
 import wordpress from "../images/wordpress.png";
 import paintBackground from "../images/paintBackground.png";
+import arrowLeft from "../images/arrowLeft.png";
+import arrowRight from "../images/arrowRight.png";
 import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
 
@@ -108,17 +110,156 @@ const HomePage = () => {
           </div>
           <div class="timeline"></div>
           <div class="timeline"></div>
+          <div class="timeline">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Wild Code School, Bordeaux
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Fullstack Web Developer
+                </span>{" "}
+                | Feb - Jul 2023
+              </p>
+            </div>
+            <div>
+              <img src={arrowLeft} alt="Arrow" className="arrow" />
+            </div>
+          </div>
+          <div class="timeline">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Ecole 42, Paris
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Piscine
+                </span>{" "}
+                | Mar - Apr 2021
+              </p>
+            </div>
+            <div>
+              <img src={arrowLeft} alt="Arrow" className="arrow" />
+            </div>
+          </div>
           <div class="timeline"></div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
+          <div class="timeline">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Fudan University, Shanghai
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Master's Degree
+                </span>{" "}
+                | Sep 2011 - Jun 2015
+              </p>
+            </div>
+            <div>
+              <img src={arrowLeft} alt="Arrow" className="arrow" />
+            </div>
+          </div>
+          <div class="timeline">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Shevchenko University, Kyiv
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Bachelor's Degree
+                </span>{" "}
+                | Sep 2007 - Jun 2011
+              </p>
+            </div>
+            <div>
+              <img src={arrowLeft} alt="Arrow" className="arrow" />
+            </div>
+          </div>
         </div>
         <div className="experience">
           <div class="timeline"></div>
+          <div class="timeline">
+            <div>
+              <img src={arrowRight} alt="Arrow" className="arrow" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Freelance Web Developer
+                </span>{" "}
+                | Mar 2024
+              </p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div>
+              <img src={arrowRight} alt="Arrow" className="arrow" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Qomon, Bordeaux
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Front End Developer
+                </span>{" "}
+                | Sep 2023 - Mar 2024
+              </p>
+            </div>
+          </div>
           <div class="timeline"></div>
           <div class="timeline"></div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
+          <div class="timeline">
+            <div>
+              <img src={arrowRight} alt="Arrow" className="arrow" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                Gucci, Paris
+              </p>
+              <p className="p-istok" style={{ fontSize: "1rem" }}>
+                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
+                  Team Manager
+                </span>{" "}
+                | May 2021 - Dec 2022
+              </p>
+            </div>
+          </div>
           <div class="timeline"></div>
           <div class="timeline"></div>
         </div>
