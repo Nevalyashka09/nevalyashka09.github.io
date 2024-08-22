@@ -24,6 +24,83 @@ const cards = [
   { name: "WP", src: wordpress },
 ];
 
+const educationData = [
+  {
+    date: "Feb - Jul 2023",
+    position: "Fullstack Web Developer",
+    company: "Wild Code School, Bordeaux",
+    arrow: arrowLeft,
+  },
+  {
+    date: "Mar - Apr 2021",
+    position: "Piscine",
+    company: "Ecole 42, Paris",
+    arrow: arrowLeft,
+  },
+  {
+    date: "Sep 2011 - Jun 2015",
+    position: "Master's Degree",
+    company: "Fudan University, Shanghai",
+    arrow: arrowLeft,
+  },
+  {
+    date: "Sep 2007 - Jun 2011",
+    position: "Bachelor's Degree",
+    company: "Shevchenko University, Kyiv",
+    arrow: arrowLeft,
+  },
+];
+
+const experienceData = [
+  {
+    date: "Mar 2024",
+    position: "Freelance Web Developer",
+    arrow: arrowRight,
+    reverse: true,
+  },
+  {
+    date: "Sep 2023 - Mar 2024",
+    position: "Front End Developer",
+    company: "Qomon, Bordeaux",
+    arrow: arrowRight,
+  },
+  {
+    date: "May 2021 - Dec 2022",
+    position: "Team Manager",
+    company: "Gucci, Paris",
+    arrow: arrowRight,
+  },
+];
+
+const TimelineEntry = ({
+  date,
+  position,
+  company,
+  arrow = false,
+  arrowPosition = "after",
+}) => (
+  <div className="timeline">
+    {arrow && arrowPosition === "before" && (
+      <div>
+        <img src={arrow} alt="Arrow" className="arrow" />
+      </div>
+    )}
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <p className="p-istok" style={{ fontSize: "1rem" }}>
+        {company}
+      </p>
+      <p className="p-istok" style={{ fontSize: "1rem" }}>
+        <span style={{ color: "#1b5536" }}>{position}</span> | {date}
+      </p>
+    </div>
+    {arrow && arrowPosition === "after" && (
+      <div>
+        <img src={arrow} alt="Arrow" className="arrow" />
+      </div>
+    )}
+  </div>
+);
+
 const TechCard = ({ name, src }) => (
   <div className="techno-card">
     <img src={src} alt={name} className="techno-card-image" />
@@ -98,170 +175,31 @@ const HomePage = () => {
       </section>
       <section className="background">
         <div className="education">
-          <div
-            class="timeline"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className="timeline-header">
             <h1>My Background</h1>
           </div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
-          <div class="timeline">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Wild Code School, Bordeaux
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Fullstack Web Developer
-                </span>{" "}
-                | Feb - Jul 2023
-              </p>
-            </div>
-            <div>
-              <img src={arrowLeft} alt="Arrow" className="arrow" />
-            </div>
-          </div>
-          <div class="timeline">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Ecole 42, Paris
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Piscine
-                </span>{" "}
-                | Mar - Apr 2021
-              </p>
-            </div>
-            <div>
-              <img src={arrowLeft} alt="Arrow" className="arrow" />
-            </div>
-          </div>
-          <div class="timeline"></div>
-          <div class="timeline">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Fudan University, Shanghai
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Master's Degree
-                </span>{" "}
-                | Sep 2011 - Jun 2015
-              </p>
-            </div>
-            <div>
-              <img src={arrowLeft} alt="Arrow" className="arrow" />
-            </div>
-          </div>
-          <div class="timeline">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Shevchenko University, Kyiv
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Bachelor's Degree
-                </span>{" "}
-                | Sep 2007 - Jun 2011
-              </p>
-            </div>
-            <div>
-              <img src={arrowLeft} alt="Arrow" className="arrow" />
-            </div>
-          </div>
+          {educationData.map((entry, index) => (
+            <TimelineEntry
+              key={index}
+              date={entry.date}
+              position={entry.position}
+              company={entry.company}
+              arrow={entry.arrow}
+              arrowPosition="after"
+            />
+          ))}
         </div>
         <div className="experience">
-          <div class="timeline"></div>
-          <div class="timeline">
-            <div>
-              <img src={arrowRight} alt="Arrow" className="arrow" />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Freelance Web Developer
-                </span>{" "}
-                | Mar 2024
-              </p>
-            </div>
-          </div>
-          <div class="timeline">
-            <div>
-              <img src={arrowRight} alt="Arrow" className="arrow" />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Qomon, Bordeaux
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Front End Developer
-                </span>{" "}
-                | Sep 2023 - Mar 2024
-              </p>
-            </div>
-          </div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
-          <div class="timeline">
-            <div>
-              <img src={arrowRight} alt="Arrow" className="arrow" />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                Gucci, Paris
-              </p>
-              <p className="p-istok" style={{ fontSize: "1rem" }}>
-                <span style={{ color: "#1b5536", fontSize: "1.2rem" }}>
-                  Team Manager
-                </span>{" "}
-                | May 2021 - Dec 2022
-              </p>
-            </div>
-          </div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
+          {experienceData.map((entry, index) => (
+            <TimelineEntry
+              key={index}
+              date={entry.date}
+              position={entry.position}
+              company={entry.company}
+              arrow={entry.arrow}
+              arrowPosition="before"
+            />
+          ))}
         </div>
       </section>
     </section>

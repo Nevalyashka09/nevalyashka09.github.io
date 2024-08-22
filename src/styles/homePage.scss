@@ -121,9 +121,18 @@
   gap: 3rem;
   justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
+  margin: 0.5rem 0 0 0;
 }
 
 .arrow {
   height: 3rem;
   width: 3rem;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
