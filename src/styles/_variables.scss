@@ -17,6 +17,13 @@ $homemadeApple-font: "homemadeApple";
 }
 
 @font-face {
+  font-family: "istokWebBold";
+  src: url("../../public/fonts/IstokWeb-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "homemadeApple";
   src: url("../../public/fonts/HomemadeApple-Regular.ttf") format("truetype");
   font-weight: normal;
