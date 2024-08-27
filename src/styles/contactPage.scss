@@ -1,5 +1,42 @@
 @import "../styles/variables";
 
-.contactPage {
-  padding: 20px;
+.light-blue-rectangle {
+  background-color: #effff9;
+  height: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  height: 7rem;
+  position: relative;
+  margin-top: -2rem;
+  z-index: 1;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 25rem;
+  margin: 1rem 5rem 0 5rem;
+}
+
+.contact-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  gap: 1rem;
+}
+
+.contact-paint-background {
+  height: 15rem;
+  width: 25rem;
+  margin-right: 4rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
