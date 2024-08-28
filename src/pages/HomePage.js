@@ -13,6 +13,7 @@ import arrowLeft from "../images/arrowLeft.png";
 import arrowRight from "../images/arrowRight.png";
 import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
+import CV from "../images/CV_OlesiaTur.pdf";
 
 const cards = [
   { name: "UI/UX", src: uiux },
@@ -123,6 +124,16 @@ const ExperienceTimeLineItem = ({ company, position, date }) => (
   </div>
 );
 
+const downloadCV = () => {
+  const link = document.createElement("a");
+  link.href = CV;
+  link.target = "_blank";
+  link.setAttribute("download", "CV_OlesiaTur.pdf");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const HomePage = () => {
   return (
     <section>
@@ -150,7 +161,7 @@ const HomePage = () => {
               <h1>I'm Olesia</h1>
             </div>
             <p className="p-istok">FRONT END WEB DEVELOPER</p>
-            <Button />
+            <Button text="Download CV" onCklick={downloadCV} />
           </div>
           <div style={{ margin: "5rem 0 0 15rem" }}>
             <p className="p-cursive">Based in Bordeaux, France</p>

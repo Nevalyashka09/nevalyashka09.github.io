@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/contactPage.scss";
 import paintBackground from "../images/paintBackground2.png";
+import Button from "../portfolioComponents/Button";
 
 const ContactPage = () => {
   return (
@@ -39,7 +40,57 @@ const ContactPage = () => {
             className="contact-paint-background"
           />
         </div>
-        <div className="form-container"></div>
+        <div className="form-container">
+          <form className="form" onSubmit="handleSubmit">
+            <div className="form-inputs">
+              <div className="contact-form-input">
+                <label className="p-istok" htmlFor="name">
+                  Your Name:
+                </label>
+                <input
+                  className="contact-form-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value=""
+                  onChange="handleChange"
+                  required
+                />
+              </div>
+              <div className="contact-form-input">
+                <label className="p-istok" htmlFor="email">
+                  Your Email:
+                </label>
+                <input
+                  className="contact-form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value=""
+                  onChange="onChange"
+                  required
+                />
+              </div>
+              <div className="contact-form-input">
+                <label className="p-istok" htmlFor="message">
+                  Your Message:
+                </label>
+                <textarea
+                  className="contact-form-input"
+                  id="message"
+                  name="message"
+                  rows="7"
+                  value=""
+                  onChange="onChange"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <Button text="Send" />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
-import CV from "../images/CV_OlesiaTur.pdf";
 
-const Button = () => {
+const Button = ({ text, onCklick }) => {
   const styles = {
     buttonContainer: {
       width: "fit-content",
@@ -18,19 +17,9 @@ const Button = () => {
     },
   };
 
-  const downloadCV = () => {
-    const link = document.createElement("a");
-    link.href = CV;
-    link.target = "_blank";
-    link.setAttribute("download", "CV_OlesiaTur.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <button style={styles.buttonContainer} onClick={downloadCV}>
-      Download CV
+    <button style={styles.buttonContainer} onClick={onCklick}>
+      {text}
     </button>
   );
 };
