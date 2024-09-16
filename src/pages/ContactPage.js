@@ -1,11 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/contactPage.scss";
 import paintBackground from "../images/paintBackground2.png";
 import Button from "../portfolioComponents/Button";
+import AlertMessage from "../portfolioComponents/AlertMessage";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [alertMessageLineOne, setAlertMessageLineOne] = useState("");
+  const [alertMessageLineTwo, setAlertMessageLineTwo] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+
+  // Update form data when input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_EMAILJS_USER_ID,
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          setAlertMessageLineOne("Your message is well received!");
+          setAlertMessageLineTwo("Thank you very much!");
+          setShowAlert(true);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          setAlertMessageLineOne("Oups! Something went wrong.");
+          setAlertMessageLineTwo(
+            "Please send me an email on olesia.tur@gmail.com",
+          );
+          setShowAlert(true);
+        },
+      );
+
+    // Reset the form after submission
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  // Function to close the alert
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
     <div>
+      {showAlert && (
+        <AlertMessage
+          messageLineOne={alertMessageLineOne}
+          messageLineTwo={alertMessageLineTwo}
+          onClose={closeAlert}
+        />
+      )}
       <div className="light-blue-rectangle" />
       <div className="header-container">
         <h1 style={{ fontFamily: "homemadeApple", position: "relative" }}>
@@ -41,7 +105,7 @@ const ContactPage = () => {
           />
         </div>
         <div className="form-container">
-          <form className="form" onSubmit="handleSubmit">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="form-inputs">
               <div className="contact-form-input">
                 <label className="p-istok" htmlFor="name">
@@ -52,8 +116,8 @@ const ContactPage = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value=""
-                  onChange="handleChange"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -66,8 +130,8 @@ const ContactPage = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value=""
-                  onChange="onChange"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -80,8 +144,8 @@ const ContactPage = () => {
                   id="message"
                   name="message"
                   rows="7"
-                  value=""
-                  onChange="onChange"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                 />
               </div>
