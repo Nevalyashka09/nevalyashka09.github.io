@@ -145,7 +145,12 @@ const HomePage = () => {
             alt="Paint Background"
             className="paint-background"
           />
-          <img src={profilePhoto} alt="Profile" className="profile-photo" />
+          <img
+            src={profilePhoto}
+            alt="Profile"
+            className="profile-photo"
+            loading="lazy"
+          />
         </div>
         <div className="text-container">
           <div

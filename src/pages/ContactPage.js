@@ -3,6 +3,7 @@ import "../styles/contactPage.scss";
 import paintBackground from "../images/paintBackground2.png";
 import Button from "../portfolioComponents/Button";
 import AlertMessage from "../portfolioComponents/AlertMessage";
+import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
 import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
@@ -70,12 +71,15 @@ const ContactPage = () => {
           onClose={closeAlert}
         />
       )}
-      <div className="light-blue-rectangle" />
-      <div className="header-container">
-        <h1 style={{ fontFamily: "homemadeApple", position: "relative" }}>
-          Let's get in touch <span style={{ color: "#ff4d00" }}>...</span>
-        </h1>
-      </div>
+      <LightBlueRectangularHeader
+        text={
+          <>
+            Let's get in touch <span style={{ color: "#ff4d00" }}>...</span>
+          </>
+        }
+        font="homemadeApple"
+        fontSize="2rem"
+      />
       <div className="contact-form">
         <div
           style={{
