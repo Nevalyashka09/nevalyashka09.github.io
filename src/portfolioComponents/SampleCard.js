@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import arrowRight from "../images/arrowRight.png";
@@ -6,6 +6,17 @@ import arrowRight from "../images/arrowRight.png";
 const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const handleCardClick = () => {
     setIsOpen(true);
@@ -123,7 +134,7 @@ const styles = {
     position: "relative",
   },
   videoContainer: {
-    height: "72%",
+    height: "75%",
     borderBottom: "2px solid #1b5536",
     borderTopLeftRadius: "10px",
     borderTopRightRadius: "10px",
@@ -131,7 +142,7 @@ const styles = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
   },
   componentNameContainer: {
-    height: "28%",
+    height: "25%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -179,7 +190,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "70%",
+    height: "75%",
     width: "100%",
     borderTopLeftRadius: "10px",
     borderTopRightRadius: "10px",
@@ -187,8 +198,8 @@ const styles = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
   },
   openedNameContainer: {
-    backgroundColor: "#effff9",
-    height: "30%",
+    backgroundColor: "#fff",
+    height: "25%",
     borderBottomLeftRadius: "10px",
     borderBottomRightRadius: "10px",
     display: "flex",
@@ -202,7 +213,7 @@ const styles = {
     background: "transparent",
     border: "none",
     fontSize: "2rem",
-    color: "#fff",
+    color: "#ff4d00",
     cursor: "pointer",
   },
   openedNameText: {
@@ -235,6 +246,8 @@ const styles = {
     alignItems: "center",
     gap: "2rem",
     transform: "rotateY(180deg)",
+    backgroundColor: "#fff",
+    borderRadius: "10px",
   },
   codeContainer: {
     width: "90%",

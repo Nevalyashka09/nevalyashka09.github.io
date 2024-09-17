@@ -1,13 +1,15 @@
 @import "../styles/variables";
 
 .aboutCodeSamplesContainer {
-  margin: 0 7rem 5rem 7rem;
+  margin: 0 7rem 3rem 7rem;
   text-align: center;
 }
 
 .cardsContainer {
-  margin: 0 7rem 2rem 7rem;
-  height: 100rem;
+  margin: 0 7rem 5rem 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
 }
 
 .syntaxHighlighterScrollbar::-webkit-scrollbar {

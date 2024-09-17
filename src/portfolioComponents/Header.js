@@ -17,6 +17,7 @@ const Header = () => {
       fontSize: "1.5rem",
       alignSelf: "center",
       textShadow: "2px 2px 3px rgba(0, 0, 0, 0.1)",
+      textDecoration: "none",
     },
     navLinks: {
       display: "flex",
@@ -44,7 +45,9 @@ const Header = () => {
 
   return (
     <header style={styles.headerContainer}>
-      <h2 style={styles.name}>Olesia</h2>
+      <Link to={"/"} style={styles.name}>
+        Olesia
+      </Link>
       <nav style={styles.navLinks}>
         {navLinks.map((link, index) => (
           <Link
