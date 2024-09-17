@@ -9,3 +9,8 @@
   margin: 0 7rem 2rem 7rem;
   height: 100rem;
 }
+
+.syntaxHighlighterScrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}

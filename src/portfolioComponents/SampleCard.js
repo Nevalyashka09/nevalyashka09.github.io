@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import arrowRight from "../images/arrowRight.png";
 
-const SampleCard = ({ text, video }) => {
+const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -32,7 +34,7 @@ const SampleCard = ({ text, video }) => {
           ></video>
         </div>
         <div style={styles.componentNameContainer}>
-          <p style={styles.componentNameText}>{text}</p>
+          <p style={styles.componentNameText}>{sampleName}</p>
         </div>
       </div>
 
@@ -59,7 +61,7 @@ const SampleCard = ({ text, video }) => {
                   ></video>
                 </div>
                 <div style={styles.openedNameContainer}>
-                  <p style={styles.openedNameText}>{text}</p>
+                  <p style={styles.openedNameText}>{sampleName}</p>
                   <div style={styles.codeButtonContainer}>
                     <button style={styles.codeButton} onClick={handleFlip}>
                       Check the code
@@ -71,10 +73,31 @@ const SampleCard = ({ text, video }) => {
             ) : (
               // Back side (code content or placeholder for now)
               <div style={styles.backContent}>
-                <p>This is the code content (or something else).</p>
-                <button style={styles.backButton} onClick={handleFlip}>
-                  Go Back
-                </button>
+                <div
+                  style={{
+                    ...styles.openedVideoContainer,
+                    ...styles.codeContainer,
+                  }}
+                >
+                  <SyntaxHighlighter
+                    className="syntaxHighlighterScrollbar"
+                    language="javascript"
+                    style={atomDark}
+                    customStyle={styles.codeStyle}
+                  >
+                    {codeText}
+                  </SyntaxHighlighter>
+                </div>
+                <p style={styles.openedNameText}>{sampleName}</p>
+                <p
+                  style={{
+                    ...styles.componentNameText,
+                    marginTop: "-1.5rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  {sampleDescription}
+                </p>
               </div>
             )}
 
@@ -157,7 +180,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: "70%",
-    borderBottom: "2px solid #1b5536",
+    width: "100%",
     borderTopLeftRadius: "10px",
     borderTopRightRadius: "10px",
     backgroundColor: "#151515",
@@ -174,8 +197,8 @@ const styles = {
   },
   closeButton: {
     position: "absolute",
-    top: "5px",
-    right: "15px",
+    top: "0px",
+    right: "5px",
     background: "transparent",
     border: "none",
     fontSize: "2rem",
@@ -210,8 +233,17 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    gap: "5rem",
+    gap: "2rem",
     transform: "rotateY(180deg)",
+  },
+  codeContainer: {
+    width: "90%",
+    background: "rgb(29, 31, 33)",
+  },
+  codeStyle: {
+    height: "98%",
+    width: "98%",
+    fontSize: "0.7rem",
   },
 };
 
