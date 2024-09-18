@@ -14,6 +14,7 @@ import arrowRight from "../images/arrowRight.png";
 import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
 import CV from "../images/CV_OlesiaTur.pdf";
+import { ReactTyped } from "react-typed";
 
 const cards = [
   { name: "UI/UX", src: uiux },
@@ -162,7 +163,17 @@ const HomePage = () => {
             }}
           >
             <div>
-              <h1>Hey There,</h1>
+              <ReactTyped
+                style={{
+                  color: "#1b5536",
+                  fontFamily: "IstokWeb",
+                  fontSize: "2.5rem",
+                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
+                }}
+                strings={["Hey There,"]}
+                typeSpeed={150}
+                showCursor={false}
+              />
               <h1>I'm Olesia</h1>
             </div>
             <p className="p-istok">FRONT END WEB DEVELOPER</p>

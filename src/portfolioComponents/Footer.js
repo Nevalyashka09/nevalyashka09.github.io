@@ -1,9 +1,10 @@
 import React from "react";
+import wheel from "../images/wheel.gif";
 
 const Footer = () => {
   const styles = {
     footerContainer: {
-      backgroundColor: "#FAE843",
+      backgroundColor: "#fff",
       justifyContent: "center",
       display: "flex",
       alignItems: "center",
@@ -13,6 +14,11 @@ const Footer = () => {
       fontFamily: "istokWeb",
       fontSize: "1.2rem",
     },
+    wheel: {
+      width: "2rem",
+      height: "2rem",
+      marginLeft: "0.3rem",
+    },
   };
 
   const currentYear = new Date().getFullYear();
@@ -20,6 +26,7 @@ const Footer = () => {
   return (
     <footer style={styles.footerContainer}>
       <p style={styles.footerText}>Bordeaux, {currentYear} </p>
+      <img style={styles.wheel} src={wheel} alt=""></img>
     </footer>
   );
 };

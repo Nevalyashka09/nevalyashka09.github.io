@@ -111,7 +111,6 @@ const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
                 </p>
               </div>
             )}
-
             <button style={styles.closeButton} onClick={handleCloseModal}>
               ×
             </button>
@@ -154,6 +153,7 @@ const styles = {
   componentNameText: {
     fontSize: "1.2rem",
     fontFamily: "istokWeb",
+    color: "#1b5536",
   },
   whiteDiv: {
     display: "flex",
@@ -213,12 +213,13 @@ const styles = {
     background: "transparent",
     border: "none",
     fontSize: "2rem",
-    color: "#ff4d00",
+    color: "#1b5536",
     cursor: "pointer",
   },
   openedNameText: {
     fontSize: "2rem",
     fontFamily: "istokWeb",
+    color: "#1b5536",
   },
   codeButtonContainer: {
     position: "absolute",
@@ -250,7 +251,8 @@ const styles = {
     borderRadius: "10px",
   },
   codeContainer: {
-    width: "90%",
+    width: "85%",
+    height: "70%",
     background: "rgb(29, 31, 33)",
   },
   codeStyle: {
