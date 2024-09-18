@@ -69,16 +69,7 @@ const experienceData = [
 const TechCard = ({ name, src }) => (
   <div className="techno-card">
     <img src={src} alt={name} className="techno-card-image" />
-    <p
-      className="p-istok"
-      style={{
-        fontSize: "0.6rem",
-        margin: "0.2rem 1rem 1rem 0",
-        alignSelf: "flex-end",
-      }}
-    >
-      {name}
-    </p>
+    <p className="p-istok techno-card-name">{name}</p>
   </div>
 );
 
@@ -154,22 +145,10 @@ const HomePage = () => {
           />
         </div>
         <div className="text-container">
-          <div
-            style={{
-              margin: "5rem 0 0 0",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-            }}
-          >
+          <div className="header">
             <div>
               <ReactTyped
-                style={{
-                  color: "#1b5536",
-                  fontFamily: "IstokWeb",
-                  fontSize: "2.5rem",
-                  textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
-                }}
+                className="typed-text"
                 strings={["Hey There,"]}
                 typeSpeed={150}
                 showCursor={false}
@@ -177,7 +156,7 @@ const HomePage = () => {
               <h1>I'm Olesia</h1>
             </div>
             <p className="p-istok">FRONT END WEB DEVELOPER</p>
-            <Button text="Download CV" onCklick={downloadCV} />
+            <Button text="Download CV" onClick={downloadCV} />
           </div>
           <div style={{ margin: "5rem 0 0 15rem" }}>
             <p className="p-cursive">Based in Bordeaux, France</p>
@@ -208,14 +187,7 @@ const HomePage = () => {
       </section>
       <section className="background">
         <div className="education">
-          <div
-            class="timeline"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className="timeline background-header-container">
             <h1>My Background</h1>
           </div>
           <div class="timeline"></div>

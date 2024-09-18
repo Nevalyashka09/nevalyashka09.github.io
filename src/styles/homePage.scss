@@ -1,41 +1,54 @@
 @import "../styles/variables";
 
-// First section - Intro
 .intro-section {
   background-color: $light-blue;
   height: 30rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.photo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  .photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .paint-background {
+      position: absolute;
+      z-index: 0;
+      width: 30rem;
+      height: 35rem;
+    }
+
+    .profile-photo {
+      position: absolute;
+      z-index: 1;
+      width: 25rem;
+      height: 32rem;
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5rem;
+
+    .header {
+      margin: 5rem 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .typed-text {
+        color: #1b5536;
+        font-family: IstokWeb;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
 }
 
-.paint-background {
-  position: absolute;
-  z-index: 0;
-  width: 30rem;
-  height: 35rem;
-}
-
-.profile-photo {
-  position: absolute;
-  z-index: 1;
-  width: 25rem;
-  height: 32rem;
-  margin: 0 0 0 2rem;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 5rem;
-}
-
-// Second section - My help
 .my-help {
   background-color: $yellow;
   height: 20rem;
@@ -43,100 +56,105 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  .help-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5rem 0 5rem;
+    gap: 1rem;
+  }
+
+  .techno-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .techno-cards-row {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      .techno-card {
+        height: 5rem;
+        width: 5rem;
+        background-color: $white;
+        border-radius: 10%;
+        border: 1px solid $dark-green;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s;
+        transform: rotateY(0deg);
+
+        &:hover {
+          transform: rotateY(360deg);
+        }
+
+        .techno-card-image {
+          height: 3rem;
+          width: 3rem;
+          margin: 1.2rem 0 0 0;
+        }
+
+        .techno-card-name {
+          font-size: 0.6rem;
+          margin: 0.2rem 1rem 1rem 0;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }
 
-.help-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5rem 0 5rem;
-  gap: 1rem;
-}
-
-.techno-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.techno-cards-row {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-
-.techno-card {
-  height: 5rem;
-  width: 5rem;
-  background-color: $white;
-  border-radius: 10%;
-  border: 1px solid;
-  border-color: $dark-green;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s;
-  transform: rotateY(0deg);
-}
-
-.techno-card:hover {
-  transform: rotateY(360deg);
-}
-
-.techno-card-image {
-  height: 3rem;
-  width: 3rem;
-  margin: 1.2rem 0 0 0;
-}
-
-// THIRD SECTION
 .background {
   background-color: $white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 2rem 0 2rem 0;
-}
 
-.education {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: 3px dotted;
-  border-color: $orange;
-  flex-direction: column;
-  height: 40rem;
-}
+  .education,
+  .experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40rem;
 
-.experience {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 40rem;
-}
+    &.education {
+      border-right: 3px dotted $orange;
+    }
 
-.timeline {
-  flex: 1;
-  align-items: center;
-  width: 100%;
-  display: flex;
-  gap: 3rem;
-  padding: 0 5rem 0 5rem;
-}
+    .timeline {
+      flex: 1;
+      align-items: center;
+      width: 100%;
+      display: flex;
+      gap: 3rem;
+      padding: 0 5rem 0 5rem;
 
-.arrow {
-  height: 3rem;
-  width: 3rem;
-}
+      .arrow {
+        height: 3rem;
+        width: 3rem;
+      }
 
-.timeline-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+      .timeline-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      &-header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
