@@ -1,10 +1,10 @@
-import uiux from "../src/images/uiux.png";
-import html from "../src/images/html.png";
-import css from "../src/images/css.png";
-import js from "../src/images/js.png";
-import ts from "../src/images/ts.png";
-import react from "../src/images/react.png";
-import wordpress from "../src/images/wordpress.png";
+import uiux from "../../src/images/uiux.png";
+import html from "../../src/images/html.png";
+import css from "../../src/images/css.png";
+import js from "../../src/images/js.png";
+import ts from "../../src/images/ts.png";
+import react from "../../src/images/react.png";
+import wordpress from "../../src/images/wordpress.png";
 
 export const cardsData = [
   { name: "UI/UX", src: uiux },

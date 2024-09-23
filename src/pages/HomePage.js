@@ -8,8 +8,8 @@ import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
 import CV from "../images/CV_OlesiaTur.pdf";
 import { ReactTyped } from "react-typed";
-import { timelineData } from "../data";
-import { cardsData } from "../data";
+import { timelineData } from "../data/backgroundData";
+import { cardsData } from "../data/backgroundData";
 
 const TechCard = ({ name, src }) => (
   <div className="techno-card">
