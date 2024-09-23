@@ -1,13 +1,6 @@
 import React from "react";
 import "../styles/homePage.scss";
 import profilePhoto from "../images/profilePhoto.png";
-import uiux from "../images/uiux.png";
-import html from "../images/html.png";
-import css from "../images/css.png";
-import js from "../images/js.png";
-import ts from "../images/ts.png";
-import react from "../images/react.png";
-import wordpress from "../images/wordpress.png";
 import paintBackground from "../images/paintBackground.png";
 import arrowLeft from "../images/arrowLeft.png";
 import arrowRight from "../images/arrowRight.png";
@@ -15,56 +8,8 @@ import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
 import CV from "../images/CV_OlesiaTur.pdf";
 import { ReactTyped } from "react-typed";
-
-const cards = [
-  { name: "UI/UX", src: uiux },
-  { name: "HTML", src: html },
-  { name: "CSS", src: css },
-  { name: "JS", src: js },
-  { name: "TS", src: ts },
-  { name: "React", src: react },
-  { name: "WP", src: wordpress },
-];
-
-const educationData = [
-  {
-    date: "Feb - Jul 2023",
-    position: "Fullstack Web Developer",
-    company: "Wild Code School, Bordeaux",
-  },
-  {
-    date: "Mar - Apr 2021",
-    position: "Piscine",
-    company: "Ecole 42, Paris",
-  },
-  {
-    date: "Sep 2011 - Jun 2015",
-    position: "Master's Degree",
-    company: "Fudan University, Shanghai",
-  },
-  {
-    date: "Sep 2007 - Jun 2011",
-    position: "Bachelor's Degree",
-    company: "Shevchenko University, Kyiv",
-  },
-];
-
-const experienceData = [
-  {
-    date: "Mar 2024",
-    position: "Freelance Web Developer",
-  },
-  {
-    date: "Sep 2023 - Mar 2024",
-    position: "Front End Developer",
-    company: "Qomon, Bordeaux",
-  },
-  {
-    date: "May 2021 - Dec 2022",
-    position: "Team Manager",
-    company: "Gucci, Paris",
-  },
-];
+import { timelineData } from "../data";
+import { cardsData } from "../data";
 
 const TechCard = ({ name, src }) => (
   <div className="techno-card">
@@ -73,46 +18,46 @@ const TechCard = ({ name, src }) => (
   </div>
 );
 
-const EducationTimeLineItem = ({ company, position, date }) => (
-  <div className="timeline" style={{ justifyContent: "flex-end" }}>
-    <div style={{ flexDirection: "column", display: "flex" }}>
-      <p className="p-istok" style={{ fontSize: "1rem" }}>
-        {company}
-      </p>
-      <p className="p-istok" style={{ fontSize: "1rem" }}>
-        <span style={{ color: "#1b5536", fontFamily: "istokWebBold" }}>
-          {position}
-        </span>{" "}
-        | {date}
-      </p>
-    </div>
-    <div>
-      <img src={arrowLeft} alt="Arrow" className="arrow" />
-    </div>
-  </div>
-);
-
-const ExperienceTimeLineItem = ({ company, position, date }) => (
-  <div class="timeline">
-    <div>
-      <img src={arrowRight} alt="Arrow" className="arrow" />
-    </div>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <p className="p-istok" style={{ fontSize: "1rem" }}>
-        {company}
-      </p>
-      <p className="p-istok" style={{ fontSize: "1rem" }}>
-        <span style={{ color: "#1b5536", fontFamily: "istokWebBold" }}>
-          {position}
-        </span>{" "}
-        | {date}
-      </p>
-    </div>
+const TimeLineItem = ({ company, position, date, isLeft, arrow }) => (
+  <div
+    className="timeline"
+    style={{ justifyContent: isLeft ? "flex-end" : "flex-start" }}
+  >
+    {isLeft ? (
+      <div style={{ flexDirection: "column", display: "flex" }}>
+        <p className="p-istok" style={{ fontSize: "1rem" }}>
+          {company}
+        </p>
+        <p className="p-istok" style={{ fontSize: "1rem" }}>
+          <span style={{ color: "#1b5536", fontFamily: "istokWebBold" }}>
+            {position}
+          </span>{" "}
+          {date}
+        </p>
+      </div>
+    ) : null}
+    {arrow && (
+      <div>
+        <img
+          src={isLeft ? arrowLeft : arrowRight}
+          alt="Arrow"
+          className="arrow"
+        />
+      </div>
+    )}
+    {!isLeft ? (
+      <div style={{ flexDirection: "column", display: "flex" }}>
+        <p className="p-istok" style={{ fontSize: "1rem" }}>
+          {company}
+        </p>
+        <p className="p-istok" style={{ fontSize: "1rem" }}>
+          <span style={{ color: "#1b5536", fontFamily: "istokWebBold" }}>
+            {position}
+          </span>{" "}
+          {date}
+        </p>
+      </div>
+    ) : null}
   </div>
 );
 
@@ -174,12 +119,12 @@ const HomePage = () => {
         </div>
         <div className="techno-cards">
           <div className="techno-cards-row">
-            {cards.slice(0, 3).map((card) => (
+            {cardsData.slice(0, 3).map((card) => (
               <TechCard key={card.name} name={card.name} src={card.src} />
             ))}
           </div>
           <div className="techno-cards-row">
-            {cards.slice(3).map((card) => (
+            {cardsData.slice(3).map((card) => (
               <TechCard key={card.name} name={card.name} src={card.src} />
             ))}
           </div>
@@ -190,50 +135,32 @@ const HomePage = () => {
           <div className="timeline background-header-container">
             <h1>My Background</h1>
           </div>
-          <div class="timeline"></div>
-          <div class="timeline"></div>
-          <EducationTimeLineItem
-            company={educationData[0].company}
-            position={educationData[0].position}
-            date={educationData[0].date}
-          />
-          <EducationTimeLineItem
-            company={educationData[1].company}
-            position={educationData[1].position}
-            date={educationData[1].date}
-          />
-          <div class="timeline"></div>
-          <EducationTimeLineItem
-            company={educationData[2].company}
-            position={educationData[2].position}
-            date={educationData[2].date}
-          />
-          <EducationTimeLineItem
-            company={educationData[3].company}
-            position={educationData[3].position}
-            date={educationData[3].date}
-          />
+          {timelineData
+            .filter((item) => item.type === "education")
+            .map((item, idx) => (
+              <TimeLineItem
+                key={idx}
+                company={item.company}
+                position={item.position}
+                date={item.date}
+                isLeft
+                arrow={item.arrow}
+              />
+            ))}
         </div>
         <div className="experience">
-          <div class="timeline"></div>
-          <ExperienceTimeLineItem
-            position={experienceData[0].position}
-            date={experienceData[0].date}
-          />
-          <ExperienceTimeLineItem
-            company={experienceData[1].company}
-            position={experienceData[1].position}
-            date={experienceData[1].date}
-          />
-          <div class="timeline"></div>
-          <div class="timeline"></div>
-          <ExperienceTimeLineItem
-            company={experienceData[2].company}
-            position={experienceData[2].position}
-            date={experienceData[2].date}
-          />
-          <div class="timeline"></div>
-          <div class="timeline"></div>
+          {timelineData
+            .filter((item) => item.type === "experience")
+            .map((item, idx) => (
+              <TimeLineItem
+                key={idx}
+                company={item.company}
+                position={item.position}
+                date={item.date}
+                isLeft={false}
+                arrow={item.arrow}
+              />
+            ))}
         </div>
       </section>
     </section>

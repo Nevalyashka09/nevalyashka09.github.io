@@ -37,7 +37,7 @@ const AlertMessage = ({ messageLineOne, messageLineTwo, onClose }) => {
       <div style={styles.alertBox}>
         <p style={styles.alertText}>{messageLineOne}</p>
         <p style={styles.alertText}>{messageLineTwo}</p>
-        <Button text="OK" onCklick={onClose}>
+        <Button text="OK" onClick={onClose}>
           OK
         </Button>
       </div>

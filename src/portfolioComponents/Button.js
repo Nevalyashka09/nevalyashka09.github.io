@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ text, onCklick }) => {
+const Button = ({ text, onClick }) => {
   const styles = {
     buttonContainer: {
       width: "fit-content",
@@ -18,7 +18,7 @@ const Button = ({ text, onCklick }) => {
   };
 
   return (
-    <button style={styles.buttonContainer} onClick={onCklick}>
+    <button style={styles.buttonContainer} onClick={onClick}>
       {text}
     </button>
   );
