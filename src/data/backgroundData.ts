@@ -1,12 +1,25 @@
-import uiux from "../../src/images/uiux.png";
-import html from "../../src/images/html.png";
-import css from "../../src/images/css.png";
-import js from "../../src/images/js.png";
-import ts from "../../src/images/ts.png";
-import react from "../../src/images/react.png";
-import wordpress from "../../src/images/wordpress.png";
+import uiux from "../images/uiux.png";
+import html from "../images/html.png";
+import css from "../images/css.png";
+import js from "../images/js.png";
+import ts from "../images/ts.png";
+import react from "../images/react.png";
+import wordpress from "../images/wordpress.png";
 
-export const cardsData = [
+interface Card {
+  name: string;
+  src: string;
+}
+
+interface TimelineEntry {
+  date: string;
+  position: string;
+  company: string;
+  arrow: boolean;
+  type: "education" | "experience";
+}
+
+export const cardsData: Card[] = [
   { name: "UI/UX", src: uiux },
   { name: "HTML", src: html },
   { name: "CSS", src: css },
@@ -16,7 +29,7 @@ export const cardsData = [
   { name: "WP", src: wordpress },
 ];
 
-export const timelineData = [
+export const timelineData: TimelineEntry[] = [
   {
     date: "",
     position: "",
@@ -76,6 +89,7 @@ export const timelineData = [
   {
     date: " | Mar 2024",
     position: "Freelance Web Developer",
+    company: "",
     arrow: true,
     type: "experience",
   },
@@ -101,7 +115,7 @@ export const timelineData = [
     type: "experience",
   },
   {
-    date: " |May 2021 - Dec 2022",
+    date: " | May 2021 - Dec 2022",
     position: "Team Manager",
     company: "Gucci, Paris",
     arrow: true,
