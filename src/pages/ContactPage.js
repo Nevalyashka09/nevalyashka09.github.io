@@ -1,10 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import "../styles/contactPage.scss";
 import paintBackground from "../images/paintBackground2.png";
 import Button from "../portfolioComponents/Button";
 import AlertMessage from "../portfolioComponents/AlertMessage";
 import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
 import emailjs from "@emailjs/browser";
+
+const FormInput = ({ label, type, name, value, onChange, required }) => (
+  <div className="contact-form-input">
+    <label className="p-istok" htmlFor={name}>
+      {label}
+    </label>
+    {type === "textarea" ? (
+      <textarea
+        className="contact-form-input"
+        id={name}
+        name={name}
+        rows="5"
+        value={value}
+        onChange={onChange}
+        required={required}
+      />
+    ) : (
+      <input
+        className="contact-form-input"
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+        required={required}
+      />
+    )}
+  </div>
+);
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -16,14 +45,12 @@ const ContactPage = () => {
   const [alertMessageLineTwo, setAlertMessageLineTwo] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
-  // Update form data when input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = useCallback((e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }, []);
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
 
     emailjs
       .sendForm(
@@ -43,21 +70,19 @@ const ContactPage = () => {
           console.log("FAILED...", error.text);
           setAlertMessageLineOne("Oups! Something went wrong.");
           setAlertMessageLineTwo(
-            "Please send me an email on olesia.tur@gmail.com",
+            "Please send me an email at olesia.tur@gmail.com",
           );
           setShowAlert(true);
         },
       );
 
-    // Reset the form after submission
     setFormData({
       name: "",
       email: "",
       message: "",
     });
-  };
+  }, []);
 
-  // Function to close the alert
   const closeAlert = () => {
     setShowAlert(false);
   };
@@ -111,48 +136,30 @@ const ContactPage = () => {
         <div className="form-container">
           <form className="form" onSubmit={handleSubmit}>
             <div className="form-inputs">
-              <div className="contact-form-input">
-                <label className="p-istok" htmlFor="name">
-                  Your Name:
-                </label>
-                <input
-                  className="contact-form-input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="contact-form-input">
-                <label className="p-istok" htmlFor="email">
-                  Your Email:
-                </label>
-                <input
-                  className="contact-form-input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="contact-form-input">
-                <label className="p-istok" htmlFor="message">
-                  Your Message:
-                </label>
-                <textarea
-                  className="contact-form-input"
-                  id="message"
-                  name="message"
-                  rows="7"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <FormInput
+                label="Your Name:"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <FormInput
+                label="Your Email:"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <FormInput
+                label="Your Message:"
+                type="textarea"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div>
               <Button text="Send" />

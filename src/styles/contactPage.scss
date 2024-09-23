@@ -1,69 +1,70 @@
 @import "../styles/variables";
 
-.light-blue-rectangle {
-  background-color: #effff9;
-  height: 5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-container {
-  display: flex;
-  justify-content: center;
-  height: 7rem;
-  position: relative;
-  margin-top: -2rem;
-  z-index: 1;
-}
-
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 25rem;
-  margin: 1rem 5rem 0 5rem;
+  margin: 1rem 5rem 0;
+
+  .contact-text-container {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: 1rem;
+  }
+
+  .contact-paint-background {
+    height: 15rem;
+    width: 25rem;
+    margin-right: 4rem;
+  }
 }
 
-.contact-text-container {
-  display: flex;
-  flex-direction: column;
-  width: 30rem;
-  gap: 1rem;
-}
+.light-blue-rectangle {
+  background-color: $light-blue;
+  height: 5rem;
+  position: relative;
+  overflow: hidden;
 
-.contact-paint-background {
-  height: 15rem;
-  width: 25rem;
-  margin-right: 4rem;
+  .header-container {
+    display: flex;
+    justify-content: center;
+    height: 7rem;
+    position: relative;
+    margin-top: -2rem;
+    z-index: 1;
+  }
 }
 
 .form-container {
   display: flex;
   justify-content: center;
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.form-inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-.contact-form-input {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  outline: none;
-  box-shadow: none;
-  border-color: inherit;
-}
+    .contact-form-input {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      outline: none;
+      box-shadow: none;
+      font-family: $istokWeb-font;
+      width: 25rem;
 
-.contact-form-input {
-  width: 25rem;
-  border-width: 0 0 1px 0;
-  border-color: #1b5536;
+      input,
+      textarea {
+        border-width: 0 0 1px;
+        border-color: $dark-green;
+      }
+    }
+  }
 }
