@@ -1,6 +1,7 @@
 import React from "react";
+import { contactInfo, cursivePhrases } from "../data/backgroundData";
 
-const ContactSection = () => {
+const ContactSection: React.FC = () => {
   const styles = {
     contactSectionContainer: {
       backgroundColor: "#EFFFF9",
@@ -10,13 +11,13 @@ const ContactSection = () => {
     },
     contactInfoContainer: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as const,
       justifyContent: "center",
       paddingLeft: "7rem",
     },
     cursivePhraseContainer: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as const,
       justifyContent: "center",
       alignItems: "flex-end",
       paddingRight: "10rem",
@@ -31,14 +32,6 @@ const ContactSection = () => {
       fontSize: "1.5rem",
     },
   };
-
-  const contactInfo = [
-    "Contact : ",
-    "olesia.tur@gmail.com",
-    "+33 6 95 01 36 94",
-  ];
-
-  const cursivePhrases = ["Let’s make something", "amazing together."];
 
   return (
     <section style={styles.contactSectionContainer}>

@@ -1,7 +1,12 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Header = () => {
+interface NavLink {
+  to: string;
+  text: string;
+}
+
+const Header: React.FC = () => {
   const location = useLocation();
 
   const styles = {
@@ -37,7 +42,7 @@ const Header = () => {
     },
   };
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { to: "/", text: "Home" },
     { to: "/code-samples", text: "Code Samples" },
     { to: "/contact", text: "Contact" },

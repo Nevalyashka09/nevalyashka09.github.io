@@ -2,15 +2,24 @@ import React, { useState, useEffect, useRef } from "react";
 import linkedIn from "../images/linkedin.png";
 import gitHub from "../images/github.png";
 
-const SideButton = () => {
-  const [buttonWidth, setButtonWidth] = useState("1.2rem");
-  const [buttonContent, setButtonContent] = useState("|");
+interface IconLinkProps {
+  href: string;
+  icon: string;
+  isFirst?: boolean;
+}
 
-  const buttonRef = useRef(null);
+const SideButton: React.FC = () => {
+  const [buttonWidth, setButtonWidth] = useState<string>("1.2rem");
+  const [buttonContent, setButtonContent] = useState<React.ReactNode>("|");
+
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (buttonRef.current && !buttonRef.current.contains(event.target)) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setButtonWidth("1.2rem");
         setButtonContent("|");
       }
@@ -45,7 +54,7 @@ const SideButton = () => {
     }
   };
 
-  const IconLink = ({ href, icon, isFirst }) => (
+  const IconLink: React.FC<IconLinkProps> = ({ href, icon, isFirst }) => (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <img
         src={icon}
@@ -65,7 +74,7 @@ const SideButton = () => {
       backgroundColor: "#fae843",
       color: "#1b5536",
       fontSize: "1rem",
-      position: "absolute",
+      position: "absolute" as const,
       width: buttonWidth,
       height: "8rem",
       top: "14rem",

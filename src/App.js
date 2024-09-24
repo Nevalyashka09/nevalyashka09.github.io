@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./portfolioComponents/Header.js";
-import Footer from "./portfolioComponents/Footer.js";
-import ContactSection from "./portfolioComponents/ContactSection.js";
+import Header from "./portfolioComponents/Header";
+import Footer from "./portfolioComponents/Footer";
+import ContactSection from "./portfolioComponents/ContactSection";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import CodeSamples from "./pages/CodeSamples";

@@ -1,24 +1,34 @@
 import React from "react";
 
-const LightBlueRectangularHeader = ({ text, font, fontSize }) => {
+interface LightBlueRectangularHeaderProps {
+  text: string;
+  font: string;
+  fontSize: string | number;
+}
+
+const LightBlueRectangularHeader: React.FC<LightBlueRectangularHeaderProps> = ({
+  text,
+  font,
+  fontSize,
+}) => {
   const styles = {
     lightBlueRectangle: {
       backgroundColor: "#effff9",
       height: "5rem",
-      position: "relative",
+      position: "relative" as const,
       overflow: "hidden",
     },
     headerContainer: {
       display: "flex",
       justifyContent: "center",
       height: "5.5rem",
-      position: "relative",
+      position: "relative" as const,
       marginTop: "-2rem",
       zIndex: 1,
     },
     headerText: {
       fontFamily: font,
-      position: "relative",
+      position: "relative" as const,
       fontSize: fontSize,
     },
     highlight: {

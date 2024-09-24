@@ -1,6 +1,11 @@
 import React from "react";
 
-const Button = ({ text, onClick }) => {
+interface ButtonProps {
+  text: string;
+  onClick: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
   const styles = {
     buttonContainer: {
       width: "fit-content",

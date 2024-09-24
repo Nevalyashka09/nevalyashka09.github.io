@@ -3,9 +3,21 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import arrowRight from "../images/arrowRight.png";
 
-const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isFlipped, setIsFlipped] = useState(false);
+interface SampleCardProps {
+  sampleName: string;
+  sampleDescription: string;
+  video: string;
+  codeText: string;
+}
+
+const SampleCard: React.FC<SampleCardProps> = ({
+  sampleName,
+  sampleDescription,
+  video,
+  codeText,
+}) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -60,8 +72,8 @@ const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {!isFlipped ? (
-              // Front side (video and text)
               <>
+                {/* Front side (video and text) */}
                 <div style={styles.openedVideoContainer}>
                   <video
                     height="90%"
@@ -82,8 +94,8 @@ const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
                 </div>
               </>
             ) : (
-              // Back side (code content or placeholder for now)
-              <div style={styles.backContent}>
+              <>
+                {/* Back side (code content) */}
                 <div
                   style={{
                     ...styles.openedVideoContainer,
@@ -109,7 +121,7 @@ const SampleCard = ({ sampleName, sampleDescription, video, codeText }) => {
                 >
                   {sampleDescription}
                 </p>
-              </div>
+              </>
             )}
             <button style={styles.closeButton} onClick={handleCloseModal}>
               ×
@@ -130,7 +142,7 @@ const styles = {
     boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
     cursor: "pointer",
     backgroundColor: "#1b5536",
-    position: "relative",
+    position: "relative" as const,
   },
   videoContainer: {
     height: "75%",
@@ -155,17 +167,8 @@ const styles = {
     fontFamily: "istokWeb",
     color: "#1b5536",
   },
-  whiteDiv: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    backgroundColor: "#fff",
-    color: "#000",
-    fontFamily: "istokWeb",
-  },
   modalOverlay: {
-    position: "fixed",
+    position: "fixed" as const,
     top: "0",
     left: "0",
     width: "100%",
@@ -174,11 +177,11 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: "1000",
+    zIndex: 1000,
     backdropFilter: "blur(2px)",
   },
   modalContent: {
-    position: "relative",
+    position: "relative" as const,
     width: "30rem",
     height: "40rem",
     backgroundColor: "#1b5536",
@@ -207,7 +210,7 @@ const styles = {
     alignItems: "center",
   },
   closeButton: {
-    position: "absolute",
+    position: "absolute" as const,
     top: "0px",
     right: "5px",
     background: "transparent",
@@ -222,11 +225,11 @@ const styles = {
     color: "#1b5536",
   },
   codeButtonContainer: {
-    position: "absolute",
+    position: "absolute" as const,
     bottom: "15px",
     right: "15px",
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row" as const,
     gap: "0.5rem",
   },
   codeButton: {
@@ -242,7 +245,7 @@ const styles = {
   backContent: {
     height: "100%",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column" as const,
     justifyContent: "center",
     alignItems: "center",
     gap: "2rem",

@@ -136,3 +136,14 @@ export const timelineData: TimelineEntry[] = [
     type: "experience",
   },
 ];
+
+export const contactInfo: string[] = [
+  "Contact : ",
+  "olesia.tur@gmail.com",
+  "+33 6 95 01 36 94",
+];
+
+export const cursivePhrases: string[] = [
+  "Let’s make something",
+  "amazing together.",
+];
