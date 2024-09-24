@@ -20,7 +20,7 @@ const ContactSection: React.FC = () => {
       flexDirection: "column" as const,
       justifyContent: "center",
       alignItems: "flex-end",
-      paddingRight: "10rem",
+      paddingRight: "7rem",
     },
     contactInfo: {
       fontFamily: "istokWeb",
