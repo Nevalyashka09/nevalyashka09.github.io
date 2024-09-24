@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, ChangeEvent, FormEvent } from "react";
 import "../styles/contactPage.scss";
 import paintBackground from "../images/paintBackground2.png";
 import Button from "../portfolioComponents/Button";
@@ -6,7 +6,24 @@ import AlertMessage from "../portfolioComponents/AlertMessage";
 import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
 import emailjs from "@emailjs/browser";
 
-const FormInput = ({ label, type, name, value, onChange, required }) => (
+// Define the props for the FormInput component
+interface FormInputProps {
+  label: string;
+  type: string;
+  name: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
+  required?: boolean;
+}
+
+const FormInput: React.FC<FormInputProps> = ({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+  required,
+}) => (
   <div className="contact-form-input">
     <label className="p-istok" htmlFor={name}>
       {label}
@@ -16,7 +33,7 @@ const FormInput = ({ label, type, name, value, onChange, required }) => (
         className="contact-form-input"
         id={name}
         name={name}
-        rows="5"
+        rows={5}
         value={value}
         onChange={onChange}
         required={required}
@@ -35,29 +52,38 @@ const FormInput = ({ label, type, name, value, onChange, required }) => (
   </div>
 );
 
-const ContactPage = () => {
-  const [formData, setFormData] = useState({
+const ContactPage: React.FC = () => {
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
     name: "",
     email: "",
     message: "",
   });
-  const [alertMessageLineOne, setAlertMessageLineOne] = useState("");
-  const [alertMessageLineTwo, setAlertMessageLineTwo] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessageLineOne, setAlertMessageLineOne] = useState<string>("");
+  const [alertMessageLineTwo, setAlertMessageLineTwo] = useState<string>("");
+  const [showAlert, setShowAlert] = useState<boolean>(false);
 
-  const handleChange = useCallback((e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }, []);
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    },
+    [],
+  );
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const target = e.target as HTMLFormElement;
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_EMAILJS_USER_ID,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
+        target,
+        process.env.REACT_APP_EMAILJS_USER_ID!,
       )
       .then(
         (result) => {

@@ -8,17 +8,35 @@ import Button from "../portfolioComponents/Button";
 import SideButton from "../portfolioComponents/SideButton";
 import CV from "../images/CV_OlesiaTur.pdf";
 import { ReactTyped } from "react-typed";
-import { timelineData } from "../data/backgroundData";
-import { cardsData } from "../data/backgroundData";
+import { timelineData, cardsData } from "../data/backgroundData";
 
-const TechCard = ({ name, src }) => (
+interface TechCardProps {
+  name: string;
+  src: string;
+}
+
+const TechCard: React.FC<TechCardProps> = ({ name, src }) => (
   <div className="techno-card">
     <img src={src} alt={name} className="techno-card-image" />
     <p className="p-istok techno-card-name">{name}</p>
   </div>
 );
 
-const TimeLineItem = ({ company, position, date, isLeft, arrow }) => (
+interface TimeLineItemProps {
+  company: string;
+  position: string;
+  date: string;
+  isLeft: boolean;
+  arrow?: boolean;
+}
+
+const TimeLineItem: React.FC<TimeLineItemProps> = ({
+  company,
+  position,
+  date,
+  isLeft,
+  arrow,
+}) => (
   <div
     className="timeline"
     style={{ justifyContent: isLeft ? "flex-end" : "flex-start" }}
@@ -71,7 +89,7 @@ const downloadCV = () => {
   document.body.removeChild(link);
 };
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <section>
       <section className="intro-section">
@@ -110,7 +128,7 @@ const HomePage = () => {
       </section>
       <section className="my-help">
         <div className="help-text">
-          <h1>How can I help ?</h1>
+          <h1>How can I help?</h1>
           <p className="p-istok">
             I design sleek, user-friendly interfaces. Whether it's for web or
             mobile, I’m all about making digital experiences that look great and

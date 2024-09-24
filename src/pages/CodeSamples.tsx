@@ -4,7 +4,18 @@ import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangu
 import SampleCard from "../portfolioComponents/SampleCard";
 import { codeSamples } from "../data/codeSamplesData";
 
-const CodeSamples = () => {
+interface CodeSample {
+  name: string;
+  description: string;
+  video: string;
+  codeText: string;
+}
+
+interface CodeSamplesProps {
+  codeSamples: CodeSample[];
+}
+
+const CodeSamples: React.FC<CodeSamplesProps> = () => {
   return (
     <div>
       <LightBlueRectangularHeader

@@ -72,8 +72,8 @@ const SampleCard: React.FC<SampleCardProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             {!isFlipped ? (
+              // Front side (video and text)
               <>
-                {/* Front side (video and text) */}
                 <div style={styles.openedVideoContainer}>
                   <video
                     height="90%"
@@ -94,8 +94,8 @@ const SampleCard: React.FC<SampleCardProps> = ({
                 </div>
               </>
             ) : (
-              <>
-                {/* Back side (code content) */}
+              // Back side (code content)
+              <div style={styles.backContent}>
                 <div
                   style={{
                     ...styles.openedVideoContainer,
@@ -121,7 +121,7 @@ const SampleCard: React.FC<SampleCardProps> = ({
                 >
                   {sampleDescription}
                 </p>
-              </>
+              </div>
             )}
             <button style={styles.closeButton} onClick={handleCloseModal}>
               ×
@@ -133,7 +133,7 @@ const SampleCard: React.FC<SampleCardProps> = ({
   );
 };
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   cardContainer: {
     width: "20rem",
     height: "20rem",
@@ -142,7 +142,7 @@ const styles = {
     boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
     cursor: "pointer",
     backgroundColor: "#1b5536",
-    position: "relative" as const,
+    position: "relative",
   },
   videoContainer: {
     height: "75%",
@@ -168,7 +168,7 @@ const styles = {
     color: "#1b5536",
   },
   modalOverlay: {
-    position: "fixed" as const,
+    position: "fixed",
     top: "0",
     left: "0",
     width: "100%",
@@ -177,11 +177,11 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 1000,
+    zIndex: "1000",
     backdropFilter: "blur(2px)",
   },
   modalContent: {
-    position: "relative" as const,
+    position: "relative",
     width: "30rem",
     height: "40rem",
     backgroundColor: "#1b5536",
@@ -210,7 +210,7 @@ const styles = {
     alignItems: "center",
   },
   closeButton: {
-    position: "absolute" as const,
+    position: "absolute",
     top: "0px",
     right: "5px",
     background: "transparent",
@@ -225,11 +225,11 @@ const styles = {
     color: "#1b5536",
   },
   codeButtonContainer: {
-    position: "absolute" as const,
+    position: "absolute",
     bottom: "15px",
     right: "15px",
     display: "flex",
-    flexDirection: "row" as const,
+    flexDirection: "row",
     gap: "0.5rem",
   },
   codeButton: {
@@ -245,7 +245,7 @@ const styles = {
   backContent: {
     height: "100%",
     display: "flex",
-    flexDirection: "column" as const,
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     gap: "2rem",

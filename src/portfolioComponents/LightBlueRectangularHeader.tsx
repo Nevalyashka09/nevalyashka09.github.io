@@ -1,7 +1,7 @@
 import React from "react";
 
 interface LightBlueRectangularHeaderProps {
-  text: string;
+  text: React.ReactNode;
   font: string;
   fontSize: string | number;
 }
