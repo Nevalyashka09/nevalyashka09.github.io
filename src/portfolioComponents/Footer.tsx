@@ -1,5 +1,6 @@
 import React from "react";
 import wheel from "../images/wheel.gif";
+import "../styles/_variables.scss";
 
 const Footer: React.FC = () => {
   const styles = {
@@ -24,7 +25,7 @@ const Footer: React.FC = () => {
   const currentYear: number = new Date().getFullYear();
 
   return (
-    <footer style={styles.footerContainer}>
+    <footer className="footer-container" style={styles.footerContainer}>
       <p style={styles.footerText}>Bordeaux, {currentYear} </p>
       <img style={styles.wheel} src={wheel} alt="Spinning wheel" />
     </footer>

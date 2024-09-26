@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "../styles/_variables.scss";
 
 interface NavLink {
   to: string;
@@ -49,7 +50,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header style={styles.headerContainer}>
+    <header className="header-container" style={styles.headerContainer}>
       <Link to={"/"} style={styles.name}>
         Olesia
       </Link>

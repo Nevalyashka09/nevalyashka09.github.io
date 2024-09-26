@@ -17,7 +17,7 @@ interface CodeSamplesProps {
 
 const CodeSamples: React.FC<CodeSamplesProps> = () => {
   return (
-    <div>
+    <div className="code-samples-page">
       <LightBlueRectangularHeader
         text="My Code Samples"
         font="istokWeb"

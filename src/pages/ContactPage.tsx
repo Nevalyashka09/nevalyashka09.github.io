@@ -114,7 +114,7 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="contact-page">
       {showAlert && (
         <AlertMessage
           messageLineOne={alertMessageLineOne}

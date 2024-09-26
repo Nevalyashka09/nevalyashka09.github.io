@@ -1,5 +1,6 @@
 import React from "react";
 import { contactInfo, cursivePhrases } from "../data/backgroundData";
+import "../styles/_variables.scss";
 
 const ContactSection: React.FC = () => {
   const styles = {
@@ -34,7 +35,10 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section style={styles.contactSectionContainer}>
+    <section
+      className="contact-section-container"
+      style={styles.contactSectionContainer}
+    >
       <div style={styles.contactInfoContainer}>
         {contactInfo.map((info, index) => (
           <p key={index} style={styles.contactInfo}>

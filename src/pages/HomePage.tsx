@@ -121,7 +121,7 @@ const HomePage: React.FC = () => {
             <p className="p-istok">FRONT END WEB DEVELOPER</p>
             <Button text="Download CV" onClick={downloadCV} />
           </div>
-          <div style={{ margin: "5rem 0 0 15rem" }}>
+          <div className="location-container">
             <p className="p-cursive">Based in Bordeaux, France</p>
           </div>
         </div>

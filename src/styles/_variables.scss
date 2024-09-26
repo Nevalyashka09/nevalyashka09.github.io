@@ -10,6 +10,9 @@ $black: #151515;
 $istokWeb-font: "istokWeb";
 $homemadeApple-font: "homemadeApple";
 
+// Breakpoints
+$breakpoint-mobile: 576px;
+
 @font-face {
   font-family: "istokWeb";
   src: url("../../public/fonts/IstokWeb-Regular.ttf") format("truetype");
@@ -55,4 +58,17 @@ h1 {
   font-family: $homemadeApple-font;
   font-size: 1.5rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// Component Media Queries
+@media (max-width: $breakpoint-mobile) {
+  .footer-container {
+    width: 100vh;
+  }
+  .header-container {
+    width: 100vh;
+  }
+  .contact-section-container {
+    width: 100vh;
+  }
 }

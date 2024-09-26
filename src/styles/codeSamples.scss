@@ -16,3 +16,14 @@
   width: 5px;
   height: 0px;
 }
+
+// Media Query for Mobile
+@media (max-width: $breakpoint-mobile) {
+  .code-samples-page {
+    width: 100vh;
+    .cardsContainer {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+}

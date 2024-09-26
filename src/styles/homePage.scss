@@ -47,6 +47,19 @@
       }
     }
   }
+  .location-container {
+    margin: 5rem 0 0 15rem;
+  }
+}
+
+// Intro - Media Query for Mobile
+@media (max-width: $breakpoint-mobile) {
+  .intro-section {
+    width: 100vh;
+    .location-container {
+      margin: 2rem 0 0 0;
+    }
+  }
 }
 
 .my-help {
@@ -112,6 +125,19 @@
   }
 }
 
+// My help - Media Query for Mobile
+@media (max-width: $breakpoint-mobile) {
+  .my-help {
+    width: 100vh;
+    .techno-cards {
+      margin: 0 2rem;
+    }
+    .help-text {
+      margin: 0 2rem;
+    }
+  }
+}
+
 .background {
   background-color: $white;
   display: grid;
@@ -156,5 +182,12 @@
         align-items: center;
       }
     }
+  }
+}
+
+// Background - Media Query for Mobile
+@media (max-width: $breakpoint-mobile) {
+  .background {
+    width: 100vh;
   }
 }
