@@ -6,6 +6,7 @@ import ContactSection from "./portfolioComponents/ContactSection";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import CodeSamples from "./pages/CodeSamples";
+import TestPage from "./pages/TestPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/code-samples" element={<CodeSamples />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/test" element={<TestPage />} />
         </Routes>
         <ContactSection />
         <Footer />

@@ -111,16 +111,27 @@ const SampleCard: React.FC<SampleCardProps> = ({
                     {codeText}
                   </SyntaxHighlighter>
                 </div>
-                <p style={styles.openedNameText}>{sampleName}</p>
-                <p
+                <div
                   style={{
-                    ...styles.componentNameText,
-                    marginTop: "-1.5rem",
-                    marginBottom: "1.5rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "2rem",
+                    marginLeft: "1.5rem",
                   }}
                 >
-                  {sampleDescription}
-                </p>
+                  <p style={styles.openedNameText}>{sampleName}</p>
+                  <p
+                    style={{
+                      ...styles.componentNameText,
+                      marginTop: "-1.5rem",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    {sampleDescription}
+                  </p>
+                </div>
               </div>
             )}
             <button style={styles.closeButton} onClick={handleCloseModal}>
