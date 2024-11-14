@@ -51,8 +51,8 @@ const SampleCard: React.FC<SampleCardProps> = ({
             height="100%"
             width="100%"
             autoPlay
+            loop
             muted
-            loop={!isOpen}
             src={video}
           ></video>
         </div>
@@ -80,6 +80,7 @@ const SampleCard: React.FC<SampleCardProps> = ({
                     width="90%"
                     autoPlay
                     muted
+                    loop
                     src={video}
                   ></video>
                 </div>
@@ -189,7 +190,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     justifyContent: "center",
     alignItems: "center",
     zIndex: "1000",
-    backdropFilter: "blur(2px)",
+    backdropFilter: "blur(7px)",
   },
   modalContent: {
     position: "relative",

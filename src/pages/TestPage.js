@@ -1,12 +1,8 @@
 import React from "react";
-import StarRating from "../portfolioComponents/StarRating";
+import SocialButtons from "../portfolioComponents/sampleComponents/SocialButtons";
 
 const TestPage = () => {
-  return (
-    <div>
-      <StarRating />
-    </div>
-  );
+  return <SocialButtons />;
 };
 
 export default TestPage;
