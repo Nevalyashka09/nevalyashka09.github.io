@@ -1,8 +1,8 @@
 import React from "react";
-import SocialButtons from "../portfolioComponents/sampleComponents/SocialButtons";
+import SwitchToggle from "../portfolioComponents/sampleComponents/SwitchToggle";
 
 const TestPage = () => {
-  return <SocialButtons />;
+  return <SwitchToggle />;
 };
 
 export default TestPage;
