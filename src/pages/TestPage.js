@@ -1,8 +1,8 @@
 import React from "react";
-import SwitchToggle from "../portfolioComponents/sampleComponents/SwitchToggle";
+import QrCodeGenerator from "../portfolioComponents/sampleComponents/QrCodeGenerator";
 
 const TestPage = () => {
-  return <SwitchToggle />;
+  return <QrCodeGenerator />;
 };
 
 export default TestPage;
