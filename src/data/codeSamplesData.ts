@@ -1,6 +1,7 @@
 import video from "../images/videos/sampleVideoTest.mov";
 import starRatingVideo from "../images/videos/starRating.mov";
 import socialButtonsVideo from "../images/videos/socialButtons.mov";
+import switchToggleVideo from "../images/videos/switchToggle.mov";
 
 export interface CodeSample {
   name: string;
@@ -274,42 +275,114 @@ export default SocialButtons;
 `,
   },
   {
-    name: "Slider",
-    description: "Simple and easy to use slider",
-    video: video,
-    codeText: `export default CodeSamples; import React from "react";
-import "../styles/codeSamples.scss";
-import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
-import SampleCard from "../portfolioComponents/SampleCard";
-import video from "../images/videos/sampleVideoTest.mov";
+    name: "Switch Toggle",
+    description: "A good way to manage notifications and alerts.",
+    video: switchToggleVideo,
+    codeText: `import React, { useState } from "react";
 
-const CodeSamples = () => {
+const Switch: React.FC<{
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+  checkedColor: string;
+}> = ({ label, checked, onChange, checkedColor }) => {
+  const styles = {
+    container: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      width: "300px",
+    },
+    checkbox: {
+      height: 0,
+      width: 0,
+      visibility: "hidden" as const,
+    },
+    label: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      cursor: "pointer",
+      width: "75px",
+      height: "40px",
+      borderRadius: "100px",
+      position: "relative" as const,
+      transition: "background-color .2s",
+      backgroundColor: checked ? checkedColor : "#8EA3A6",
+    },
+    switchButton: {
+      content: "''",
+      position: "absolute" as const,
+      top: "2.4px",
+      left: checked ? "calc(100% - 2.5px)" : "2.5px",
+      width: "35px",
+      height: "35px",
+      borderRadius: "45px",
+      transition: "0.2s",
+      background: "#fff",
+      boxShadow: "0 0 2px 0 rgba(10, 10, 10, 0.29)",
+      transform: checked ? "translateX(-100%)" : "none",
+    },
+    text: {
+      fontFamily: "Arial, sans-serif",
+      fontSize: "1.3rem",
+      margin: 0,
+    },
+  };
+
   return (
-    <div>
-      <LightBlueRectangularHeader
-        text="My Code Samples"
-        font="istokWeb"
-        fontSize="2.5rem"
+    <div style={styles.container}>
+      <p style={styles.text}>{label}</p>
+      <input
+        style={styles.checkbox}
+        id={label.toLowerCase()}
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
       />
-      <div className="aboutCodeSamplesContainer">
-        <p className="p-istok">
-          Welcome to my personal React component library! Click on any card to
-          enlarge it, view the code, or download the complete React component
-          along with its styles.
-        </p>
-      </div>
-      <div className="cardsContainer">
-        <SampleCard
-          sampleName="Slider"
-          sampleDescription="Simple and easy to use slider"
-          video={video}
-        />
-      </div>
+      <label htmlFor={label.toLowerCase()} style={styles.label}>
+        <span style={styles.switchButton} />
+      </label>
     </div>
   );
 };
 
-export default CodeSamples;
+const SwitchToggle: React.FC = () => {
+  const [isCheckedNotifications, setIsCheckedNotifications] = useState(false);
+  const [isCheckedAlerts, setIsCheckedAlerts] = useState(false);
+
+  const styles = {
+    mainContainer: {
+      display: "flex",
+      flexDirection: "column" as const,
+      width: "100%",
+      height: "25rem",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "white",
+      gap: "2rem",
+    },
+  };
+
+  return (
+    <div style={styles.mainContainer}>
+      <Switch
+        label="Allow Notifications"
+        checked={isCheckedNotifications}
+        onChange={() => setIsCheckedNotifications(!isCheckedNotifications)}
+        checkedColor="#8FD14F"
+      />
+      <Switch
+        label="Allow Critical Alerts"
+        checked={isCheckedAlerts}
+        onChange={() => setIsCheckedAlerts(!isCheckedAlerts)}
+        checkedColor="#F95454"
+      />
+    </div>
+  );
+};
+
+export default SwitchToggle;
 `,
   },
   {
