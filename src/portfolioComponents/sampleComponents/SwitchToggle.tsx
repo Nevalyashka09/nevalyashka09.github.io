@@ -44,7 +44,7 @@ const Switch: React.FC<{
       transform: checked ? "translateX(-100%)" : "none",
     },
     text: {
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "istokWeb",
       fontSize: "1.3rem",
       margin: 0,
     },

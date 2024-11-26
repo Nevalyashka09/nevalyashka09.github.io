@@ -2,6 +2,7 @@ import video from "../images/videos/sampleVideoTest.mov";
 import starRatingVideo from "../images/videos/starRating.mov";
 import socialButtonsVideo from "../images/videos/socialButtons.mov";
 import switchToggleVideo from "../images/videos/switchToggle.mov";
+import qrCodeGeneratorVideo from "../images/videos/qrCodeGenerator.mov";
 
 export interface CodeSample {
   name: string;
@@ -324,7 +325,7 @@ const Switch: React.FC<{
       transform: checked ? "translateX(-100%)" : "none",
     },
     text: {
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "istokWeb",
       fontSize: "1.3rem",
       margin: 0,
     },
@@ -386,42 +387,127 @@ export default SwitchToggle;
 `,
   },
   {
-    name: "Slider",
-    description: "Simple and easy to use slider",
-    video: video,
-    codeText: `export default CodeSamples; import React from "react";
-import "../styles/codeSamples.scss";
-import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
-import SampleCard from "../portfolioComponents/SampleCard";
-import video from "../images/videos/sampleVideoTest.mov";
+    name: "QR Code Generator",
+    description: "Generate a QR code for a website of your choice.",
+    video: qrCodeGeneratorVideo,
+    codeText: `import React, { useState, useRef } from "react";
+import * as htmlToImage from "html-to-image";
+import QRCode from "react-qr-code";
 
-const CodeSamples = () => {
+const styles = {
+  mainContainer: {
+    display: "flex" as const,
+    alignItems: "center" as const,
+    justifyContent: "center" as const,
+    width: "100%",
+    height: "90vh",
+    flexDirection: "column" as const,
+  },
+  h1: {
+    fontFamily: "istokWeb",
+    color: "#F95454",
+  },
+  inputContainer: {
+    display: "flex" as const,
+    flexDirection: "column" as const,
+    alignItems: "center" as const,
+    justifyContent: "center" as const,
+    margin: "30px",
+  },
+  inputField: {
+    minWidth: "15rem",
+    width: "100%",
+    padding: "10px",
+    fontSize: "12px",
+    outline: "none",
+    borderRadius: "5px",
+    border: "1px solid #77CDFF",
+    marginBottom: "15px",
+  },
+  button: {
+    display: "inline-block",
+    padding: "7px",
+    cursor: "pointer",
+    color: "#fff",
+    backgroundColor: "#0D92F4",
+    border: "none",
+    borderRadius: "5px",
+    fontSize: "12px",
+    fontFamily: "istokWeb",
+  },
+  qrContainer: {
+    margin: "20px",
+    textAlign: "center" as const,
+  },
+  qrButton: {
+    marginTop: "15px",
+  },
+};
+
+const QrCodeGenerator: React.FC = () => {
+  const [url, setUrl] = useState<string>("");
+  const [qrIsVisible, setQrIsVisible] = useState<boolean>(false);
+
+  const qrCodeRef = useRef<HTMLDivElement | null>(null);
+
+  const handleQrCodeGenerator = () => {
+    if (!url) {
+      return;
+    }
+    setQrIsVisible(true);
+  };
+
+  const downloadQRCode = () => {
+    if (!qrCodeRef.current) return;
+
+    htmlToImage
+      .toPng(qrCodeRef.current)
+      .then((dataUrl: string) => {
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "qr-code.png";
+        link.click();
+      })
+      .catch((error: unknown) => {
+        console.error("Error generating QR code:", error);
+      });
+  };
+
   return (
-    <div>
-      <LightBlueRectangularHeader
-        text="My Code Samples"
-        font="istokWeb"
-        fontSize="2.5rem"
-      />
-      <div className="aboutCodeSamplesContainer">
-        <p className="p-istok">
-          Welcome to my personal React component library! Click on any card to
-          enlarge it, view the code, or download the complete React component
-          along with its styles.
-        </p>
-      </div>
-      <div className="cardsContainer">
-        <SampleCard
-          sampleName="Slider"
-          sampleDescription="Simple and easy to use slider"
-          video={video}
-        />
+    <div style={styles.mainContainer}>
+      <h1 style={styles.h1}>QR Code Generator</h1>
+      <div ref={qrCodeRef}>
+        <div style={styles.inputContainer}>
+          <input
+            type="text"
+            placeholder="Enter a URL"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            style={styles.inputField}
+          />
+          <button onClick={handleQrCodeGenerator} style={styles.button}>
+            Generate QR Code
+          </button>
+        </div>
+        {qrIsVisible && (
+          <div style={styles.qrContainer}>
+            <div>
+              <QRCode value={url} size={300} />
+            </div>
+            <button
+              onClick={downloadQRCode}
+              style={{ ...styles.button, ...styles.qrButton }}
+            >
+              Download QR Code
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default CodeSamples;
+export default QrCodeGenerator;
 `,
   },
   {
