@@ -1,8 +1,8 @@
 import React from "react";
-import QrCodeGenerator from "../portfolioComponents/sampleComponents/QrCodeGenerator";
+import CreditCard from "../portfolioComponents/sampleComponents/CreditCard";
 
 const TestPage = () => {
-  return <QrCodeGenerator />;
+  return <CreditCard />;
 };
 
 export default TestPage;
