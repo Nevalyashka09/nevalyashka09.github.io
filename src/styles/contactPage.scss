@@ -1,5 +1,9 @@
 @import "../styles/variables";
 
+.contact-page {
+  min-height: 65vh;
+}
+
 .light-blue-rectangle {
   background-color: $light-blue;
   height: 5rem;

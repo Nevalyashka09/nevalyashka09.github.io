@@ -6,7 +6,6 @@ import AlertMessage from "../portfolioComponents/AlertMessage";
 import LightBlueRectangularHeader from "../portfolioComponents/LightBlueRectangularHeader";
 import emailjs from "@emailjs/browser";
 
-// Define the props for the FormInput component
 interface FormInputProps {
   label: string;
   type: string;

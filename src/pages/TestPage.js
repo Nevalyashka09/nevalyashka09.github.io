@@ -1,8 +1,8 @@
 import React from "react";
-import CreditCard from "../portfolioComponents/sampleComponents/CreditCard";
+import StarRating from "../portfolioComponents/sampleComponents/StarRating";
 
 const TestPage = () => {
-  return <CreditCard />;
+  return <StarRating />;
 };
 
 export default TestPage;

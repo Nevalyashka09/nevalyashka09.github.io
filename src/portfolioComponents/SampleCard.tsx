@@ -119,7 +119,8 @@ const SampleCard: React.FC<SampleCardProps> = ({
                     justifyContent: "center",
                     alignItems: "center",
                     gap: "2rem",
-                    marginLeft: "1.5rem",
+                    width: "95%",
+                    textAlign: "center",
                   }}
                 >
                   <p style={styles.openedNameText}>{sampleName}</p>

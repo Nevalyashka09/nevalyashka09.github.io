@@ -118,7 +118,7 @@ const HomePage: React.FC = () => {
               />
               <h1>I'm Olesia</h1>
             </div>
-            <p className="p-istok">FRONT END WEB DEVELOPER</p>
+            <p className="p-istok">WEB AND MOBILE APPLICATIONS DEVELOPER</p>
             <Button text="Download CV" onClick={downloadCV} />
           </div>
           <div className="location-container">

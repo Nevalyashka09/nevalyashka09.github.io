@@ -6,10 +6,12 @@
 }
 
 .cardsContainer {
-  margin: 0 7rem 5rem 7rem;
+  margin-bottom: 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem;
+  justify-content: center;
+  justify-items: center;
 }
 
 .syntaxHighlighterScrollbar::-webkit-scrollbar {
