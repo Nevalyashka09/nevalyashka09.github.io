@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.2e28445b.css",
-    "main.js": "/static/js/main.c0971ce9.js",
+    "main.js": "/static/js/main.f044a3f4.js",
     "static/js/453.1ed170bb.chunk.js": "/static/js/453.1ed170bb.chunk.js",
     "static/media/profilePhoto.png": "/static/media/profilePhoto.363c0a3f76ea01dbe519.png",
     "static/media/wheel.gif": "/static/media/wheel.3ce45ed86ab3eed35afb.gif",
     "static/media/creditCard.mov": "/static/media/creditCard.b759d0fcf5b7ba04e3a0.mov",
     "static/media/CV_OlesiaTur.pdf": "/static/media/CV_OlesiaTur.2617b5359230fdda7ff0.pdf",
+    "static/media/pricing.mov": "/static/media/pricing.24fe16307b1c3ee8f182.mov",
     "static/media/paintBackground2.png": "/static/media/paintBackground2.c90b9de62c0d76aa1580.png",
     "static/media/paintBackground.png": "/static/media/paintBackground.a32c478ba8e80f2aaad9.png",
     "static/media/IstokWeb-Regular.ttf": "/static/media/IstokWeb-Regular.50996525c2c1ba8165b1.ttf",
@@ -25,11 +26,11 @@
     "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.2e28445b.css.map": "/static/css/main.2e28445b.css.map",
-    "main.c0971ce9.js.map": "/static/js/main.c0971ce9.js.map",
+    "main.f044a3f4.js.map": "/static/js/main.f044a3f4.js.map",
     "453.1ed170bb.chunk.js.map": "/static/js/453.1ed170bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e28445b.css",
-    "static/js/main.c0971ce9.js"
+    "static/js/main.f044a3f4.js"
   ]
 }
