@@ -1,8 +1,8 @@
 import React from "react";
-import StarRating from "../portfolioComponents/sampleComponents/StarRating";
+import Pricing from "../portfolioComponents/sampleComponents/Pricing";
 
 const TestPage = () => {
-  return <StarRating />;
+  return <Pricing />;
 };
 
 export default TestPage;
