@@ -4,6 +4,8 @@ import switchToggleVideo from "../images/videos/switchToggle.mov";
 import qrCodeGeneratorVideo from "../images/videos/qrCodeGenerator.mov";
 import creditCardVideo from "../images/videos/creditCard.mov";
 import pricing from "../images/videos/pricing.mov";
+import neonLink from "../images/videos/neonLink.mov";
+import carousel from "../images/videos/carousel.mov";
 
 export interface CodeSample {
   name: string;
@@ -950,6 +952,209 @@ const QrCodeGenerator: React.FC = () => {
 };
 
 export default QrCodeGenerator;
+`,
+  },
+  {
+    name: "Neon Link",
+    description: "A link with a neon light animation",
+    video: neonLink,
+    codeText: `import React, { useState } from "react";
+
+const NeonLink: React.FC = () => {
+  const [hovered, setHovered] = useState(false);
+
+  const styles = {
+    mainContainer: {
+      display: "flex" as const,
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "100vh",
+      background: "black",
+      fontFamily: "istokWeb",
+    },
+    button: {
+      position: "relative" as const,
+      display: "inline-block" as const,
+      padding: "20px 30px",
+      textTransform: "uppercase" as const,
+      letterSpacing: "4px",
+      textDecoration: "none",
+      fontSize: "24px",
+      overflow: "hidden" as const,
+      transition: "0.2s",
+      background: hovered ? "#56BBF1" : "transparent",
+      boxShadow: hovered
+        ? "0 0 10px #56BBF1, 0 0 40px #56BBF1, 0 0 80px #56BBF1"
+        : "none",
+      color: hovered ? "#ffffff" : "#56BBF1",
+      transitionDelay: hovered ? "1s" : "0s",
+    },
+    span: {
+      position: "absolute" as const,
+      display: "block" as const,
+    },
+    span1: {
+      top: 0,
+      left: hovered ? "100%" : "-100%",
+      width: "100%",
+      height: "2px",
+      background: "linear-gradient(90deg, transparent, #FF85B3)",
+      transition: "1s",
+    },
+    span2: {
+      top: hovered ? "100%" : "-100%",
+      right: 0,
+      width: "2px",
+      height: "100%",
+      background: "linear-gradient(180deg, transparent, #F900BF)",
+      transition: "1s",
+      transitionDelay: "0.25s",
+    },
+    span3: {
+      bottom: 0,
+      right: hovered ? "100%" : "-100%",
+      width: "100%",
+      height: "2px",
+      background: "linear-gradient(270deg, transparent, #9900F0)",
+      transition: "1s",
+      transitionDelay: "0.5s",
+    },
+    span4: {
+      bottom: hovered ? "100%" : "-100%",
+      left: 0,
+      width: "2px",
+      height: "100%",
+      background: "linear-gradient(360deg, transparent, #56BBF1)",
+      transition: "1s",
+      transitionDelay: "0.75s",
+    },
+  };
+
+  return (
+    <div style={styles.mainContainer}>
+      <a
+        href="#"
+        style={styles.button}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onClick={() => console.log("hello")}
+      >
+        <span style={{ ...styles.span, ...styles.span1 }}></span>
+        <span style={{ ...styles.span, ...styles.span2 }}></span>
+        <span style={{ ...styles.span, ...styles.span3 }}></span>
+        <span style={{ ...styles.span, ...styles.span4 }}></span>
+        Lightsaber
+      </a>
+    </div>
+  );
+};
+
+export default NeonLink;
+`,
+  },
+  {
+    name: "Carousel",
+    description:
+      "A component shows a rotating slideshow of images with arrows to navigate through them.",
+    video: carousel,
+    codeText: `import React, { useState } from "react";
+
+import cake1 from "../../images/cake1.jpg";
+import cake2 from "../../images/cake2.jpg";
+import cake3 from "../../images/cake3.jpg";
+import cake4 from "../../images/cake4.jpeg";
+import cake5 from "../../images/cake5.jpg";
+import cake6 from "../../images/cake6.jpg";
+
+const Carousel: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState<number>(0);
+
+  const cakes: string[] = [cake1, cake2, cake3, cake4, cake5, cake6];
+
+  const nextImage = (): void => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % cakes.length);
+  };
+
+  const prevImage = (): void => {
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + cakes.length) % cakes.length,
+    );
+  };
+
+  const getThreeImages = (): number[] => {
+    const prev = (currentImage - 1 + cakes.length) % cakes.length;
+    const next = (currentImage + 1) % cakes.length;
+    return [prev, currentImage, next];
+  };
+
+  const [leftImage, centerImage, rightImage] = getThreeImages();
+
+  const styles = {
+    mainContainer: {
+      display: "flex" as const,
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
+      height: "75rem",
+      position: "relative" as const,
+      gap: "10px",
+    },
+    arrow: {
+      fontSize: "2rem",
+      cursor: "pointer",
+      userSelect: "none" as const,
+      color: "#333",
+      margin: "0 50px",
+    },
+    imagesContainer: {
+      display: "flex" as const,
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "50px",
+    },
+    image: {
+      width: "150px",
+      height: "auto",
+      borderRadius: "10px",
+      transition: "transform 0.3s ease",
+      opacity: 0.7,
+    },
+    centerImage: {
+      width: "300px",
+      height: "auto",
+      borderRadius: "10px",
+      transform: "scale(1.1)",
+      opacity: 1,
+    },
+  };
+
+  return (
+    <div style={styles.mainContainer}>
+      <span style={styles.arrow} onClick={prevImage}>
+        &#8592;
+      </span>
+      <div style={styles.imagesContainer}>
+        <img
+          src={cakes[leftImage]}
+          style={styles.image}
+        />
+        <img
+          src={cakes[centerImage]}
+          style={styles.centerImage}
+        />
+        <img
+          src={cakes[rightImage]}
+          style={styles.image}
+        />
+      </div>
+      <span style={styles.arrow} onClick={nextImage}>
+        &#8594;
+      </span>
+    </div>
+  );
+};
+
+export default Carousel;
 `,
   },
 ];

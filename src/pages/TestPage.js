@@ -1,8 +1,8 @@
 import React from "react";
-import Pricing from "../portfolioComponents/sampleComponents/Pricing";
+import Carousel from "../portfolioComponents/sampleComponents/Carousel";
 
 const TestPage = () => {
-  return <Pricing />;
+  return <Carousel />;
 };
 
 export default TestPage;
