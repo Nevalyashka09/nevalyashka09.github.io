@@ -1,8 +1,8 @@
 import React from "react";
-import Carousel from "../portfolioComponents/sampleComponents/Carousel";
+import Diagramme from "../portfolioComponents/sampleComponents/Diagramme";
 
 const TestPage = () => {
-  return <Carousel />;
+  return <Diagramme />;
 };
 
 export default TestPage;
