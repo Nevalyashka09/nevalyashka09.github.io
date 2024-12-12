@@ -27,15 +27,15 @@ type BudgetItem = {
 };
 
 const Budget: BudgetItem[] = [
-  { topic: "Daily Life", color: "#FFE31A" },
-  { topic: "Withdrawals", color: "#F72C5B" },
-  { topic: "Rent", color: "#CDC1FF" },
-  { topic: "Transport", color: "#257180" },
-  { topic: "Car", color: "#FF6500" },
-  { topic: "Health", color: "#00FF9C" },
-  { topic: "Leisure", color: "#D2FF72" },
-  { topic: "Subscriptions", color: "#7E1891" },
-  { topic: "Savings", color: "#1F509A" },
+  { topic: "Daily Life", color: "#E6C767" },
+  { topic: "Withdrawals", color: "#536493" },
+  { topic: "Rent", color: "#800000" },
+  { topic: "Transport", color: "#FD8B51" },
+  { topic: "Car", color: "#CB6040" },
+  { topic: "Health", color: "#859F3D" },
+  { topic: "Leisure", color: "#C96868" },
+  { topic: "Subscriptions", color: "#EF5A6F" },
+  { topic: "Savings", color: "#536493" },
 ];
 
 type BudgetData = {
@@ -165,7 +165,7 @@ const Diagramme: React.FC = () => {
           {totalAmount > 0 ? (
             slices
           ) : (
-            <circle cx="60" cy="60" r="60" fill="#D4EBF8" />
+            <circle cx="60" cy="60" r="60" fill="#C1D8C3" />
           )}
         </svg>
         <BudgetInput setBudgetData={setBudgetData} />
