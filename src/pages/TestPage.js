@@ -1,8 +1,8 @@
 import React from "react";
-import Diagramme from "../portfolioComponents/sampleComponents/Diagramme";
+import Map from "../portfolioComponents/sampleComponents/Map";
 
 const TestPage = () => {
-  return <Diagramme />;
+  return <Map />;
 };
 
 export default TestPage;
