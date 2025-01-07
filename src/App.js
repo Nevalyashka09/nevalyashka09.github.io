@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom"; // Use HashRouter instead of BrowserRouter
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./portfolioComponents/Header";
 import Footer from "./portfolioComponents/Footer";
 import ContactSection from "./portfolioComponents/ContactSection";
